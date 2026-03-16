@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Crew - Park City Bachelor Party</title>
+<meta name="description" content="Meet the crew heading to Park City, Aug 20-23 2026." />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x26F0;</text></svg>" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: {
+        display: ['"Bebas Neue"', 'sans-serif'],
+        body: ['"Space Grotesk"', 'sans-serif'],
+      },
+      colors: {
+        bark: { 50: '#faf6f1', 100: '#f0e6d6', 200: '#e0ccad', 300: '#ccab7c', 400: '#b98c55', 500: '#a87640', 600: '#8f5f35', 700: '#75492d', 800: '#623d2b', 900: '#533527', 950: '#2f1a13' },
+        pine: { 50: '#f3f6f3', 100: '#e3e9e2', 200: '#c7d4c5', 300: '#a1b69e', 400: '#779375', 500: '#587558', 600: '#455d44', 700: '#384b38', 800: '#2e3d2e', 900: '#273227', 950: '#131b13' },
+        summit: { 50: '#f7f7f6', 100: '#e5e3df', 200: '#cac6bf', 300: '#aaa498', 400: '#918979', 500: '#837763', 600: '#6a6050', 700: '#574e42', 800: '#4a4339', 900: '#403b33', 950: '#231f1b' },
+        ember: { 400: '#f59e0b', 500: '#d97706', 600: '#b45309' },
+      },
+    },
+  },
+}
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Space Grotesk', sans-serif; }
+  .font-display { font-family: 'Bebas Neue', sans-serif; }
+
+  .grain {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  }
+
+  .nav-link {
+    position: relative;
+    transition: color 0.2s;
+  }
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #d97706;
+    transition: width 0.3s ease;
+  }
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
+  .stagger-1 { animation-delay: 0.1s; opacity: 0; }
+  .stagger-2 { animation-delay: 0.2s; opacity: 0; }
+  .stagger-3 { animation-delay: 0.3s; opacity: 0; }
+
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  }
+  [data-reveal].revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .crew-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .crew-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+  }
+  .crew-card:hover .crew-photo {
+    transform: scale(1.03);
+  }
+  .crew-photo {
+    transition: transform 0.4s ease;
+  }
+
+  .photo-placeholder {
+    background: linear-gradient(135deg, #533527 0%, #384b38 50%, #4a4339 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .photo-placeholder svg {
+    width: 64px;
+    height: 64px;
+    opacity: 0.3;
+    color: #ccab7c;
+  }
+
+  .groom-badge {
+    background: linear-gradient(135deg, #d97706, #f59e0b);
+    color: #2f1a13;
+  }
+
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #231f1b; }
+  ::-webkit-scrollbar-thumb { background: #574e42; border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: #6a6050; }
+</style>
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:_dlc_DocId msdt:dt="string">D2SDC4EDXKYS-323359890-26639</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">8fc7e7a3-01ac-4d9a-b943-ce653c7cd969</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">https://mckinsey.sharepoint.com/sites/spe-int-vau1ckx4plzypm2pf72/_layouts/15/DocIdRedir.aspx?ID=D2SDC4EDXKYS-323359890-26639, D2SDC4EDXKYS-323359890-26639</mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+<body class="bg-bark-950 text-bark-100">
+
+<!-- PASSWORD GATE -->
+<div id="authGate" class="fixed inset-0 z-[10000] bg-bark-950 flex items-center justify-center px-6">
+  <div class="max-w-sm w-full text-center">
+    <p class="font-display text-6xl sm:text-7xl text-bark-50 tracking-wide mb-2">PARK CITY</p>
+    <p class="font-display text-3xl text-ember-400 tracking-wider mb-8">BACHELOR PARTY '26</p>
+    <p class="text-bark-400 text-sm mb-6">Enter the password to get in.</p>
+    <form id="authForm" class="space-y-4">
+      <input id="authInput" type="password" autofocus placeholder="Password" class="w-full bg-bark-900/80 border border-summit-700/50 rounded px-4 py-3 text-bark-100 text-center placeholder-bark-600 focus:outline-none focus:border-ember-500 transition-colors tracking-wider" />
+      <button type="submit" class="w-full bg-ember-500 hover:bg-ember-600 text-bark-950 font-semibold py-3 rounded transition-colors text-sm tracking-wider uppercase">Enter</button>
+      <p id="authError" class="text-red-400 text-sm hidden">Wrong password. Try again.</p>
+    </form>
+  </div>
+</div>
+
+<div id="siteContent" class="hidden">
+<div class="grain"></div>
+
+<!-- NAV -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-bark-950/95 backdrop-blur border-b border-summit-800/20">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="index.html" class="font-display text-2xl tracking-wider text-ember-400 hover:text-ember-500 transition-colors">PC '26</a>
+    <div class="hidden md:flex items-center gap-8 text-sm font-medium text-bark-200">
+      <a href="index.html#schedule" class="nav-link hover:text-ember-400">Schedule</a>
+      <a href="crew.html" class="nav-link text-ember-400 hover:text-ember-400">The Crew</a>
+      <a href="index.html#logistics" class="nav-link hover:text-ember-400">Logistics</a>
+      <a href="index.html#costs" class="nav-link hover:text-ember-400">Costs</a>
+      <a href="index.html#rsvp" class="nav-link hover:text-ember-400 bg-ember-500/20 px-4 py-1.5 rounded border border-ember-500/30">RSVP</a>
+    </div>
+    <button id="mobileMenuBtn" class="md:hidden text-bark-200 hover:text-ember-400 transition-colors">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+  <div id="mobileMenu" class="md:hidden hidden bg-bark-950/95 backdrop-blur border-t border-summit-800/30">
+    <div class="px-6 py-4 flex flex-col gap-4 text-sm font-medium text-bark-200">
+      <a href="index.html#schedule" class="hover:text-ember-400">Schedule</a>
+      <a href="crew.html" class="text-ember-400">The Crew</a>
+      <a href="index.html#logistics" class="hover:text-ember-400">Logistics</a>
+      <a href="index.html#costs" class="hover:text-ember-400">Costs</a>
+      <a href="index.html#rsvp" class="hover:text-ember-400">RSVP</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<section class="pt-32 pb-16 md:pt-40 md:pb-20 px-6 text-center relative">
+  <div class="max-w-4xl mx-auto">
+    <p class="animate-fade-in-up stagger-1 text-ember-400 text-sm tracking-[0.3em] uppercase mb-4">Park City '26</p>
+    <h1 class="animate-fade-in-up stagger-2 font-display text-6xl sm:text-7xl md:text-8xl text-bark-50 tracking-wide mb-4">THE CREW</h1>
+    <p class="animate-fade-in-up stagger-3 text-bark-400 text-lg md:text-xl max-w-2xl mx-auto">Meet the men brave enough to spend four days in the mountains together. God help them.</p>
+  </div>
+</section>
+
+<!-- CREW GRID -->
+<section class="pb-24 md:pb-32 px-6">
+  <div class="max-w-5xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8" id="crewGrid">
+      <!-- Cards rendered by JS below -->
+    </div>
+  </div>
+</section>
+
+<!-- BACK LINK -->
+<section class="pb-16 px-6 text-center">
+  <a href="index.html" class="inline-flex items-center gap-2 text-bark-400 hover:text-ember-400 transition-colors text-sm font-medium">
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+    Back to the Itinerary
+  </a>
+</section>
+
+<!-- FOOTER -->
+<footer class="py-12 px-6 border-t border-summit-800/20">
+  <div class="max-w-5xl mx-auto text-center">
+    <p class="font-display text-3xl text-bark-50 tracking-wider mb-2">PARK CITY '26</p>
+    <p class="text-bark-500 text-sm">Four days. Ten guys. One last ride before the ring.</p>
+  </div>
+</footer>
+
+<script>
+// ============================================================
+// CREW DATA - Edit this array to add/update members
+// ============================================================
+// For photos: place image files in a "photos" folder next to
+// this HTML file, then set the photo field to "photos/name.jpg"
+// Leave photo as null to show a placeholder silhouette.
+// ============================================================
+const crew = [
+  {
+    name: 'The Groom',
+    role: 'groom',
+    photo: null,
+    location: 'New York, NY',
+    description: 'The man of the hour. Somehow convinced someone to marry him. Enjoy freedom while it lasts, king.',
+  },
+  {
+    name: 'Best Man',
+    role: 'best-man',
+    photo: null,
+    location: 'Los Angeles, CA',
+    description: 'Planned this whole thing. If anything goes wrong, it\'s his fault. If everything goes right, the groom will still take credit.',
+  },
+  {
+    name: 'Guy #3',
+    role: null,
+    photo: null,
+    location: 'Chicago, IL',
+    description: 'Replace this with an actual roast. The funnier and more personal, the better.',
+  },
+  {
+    name: 'Guy #4',
+    role: null,
+    photo: null,
+    location: 'Austin, TX',
+    description: 'Replace this with an actual roast. The funnier and more personal, the better.',
+  },
+  {
+    name: 'Guy #5',
+    role: null,
+    photo: null,
+    location: 'Denver, CO',
+    description: 'Replace this with an actual roast. The funnier and more personal, the better.',
+  },
+  {
+    name: 'Guy #6',
+    role: null,
+    photo: null,
+    location: 'San Francisco, CA',
+    description: 'Replace this with an actual roast. The funnier and more personal, the better.',
+  },
+  {
+    name: 'Guy #7',
+    role: null,
+    photo: null,
+    location: 'Nashville, TN',
+    description: 'Replace this with an actual roast. The funnier and more personal, the better.',
+  },
+  {
+    name: 'Guy #8',
+    role: null,
+    photo: null,
+    location: 'Miami, FL',
+    description: 'Replace this with an actual roast. The funnier and more personal, the better.',
+  },
+  {
+    name: 'Guy #9',
+    role: null,
+    photo: null,
+    location: 'Boston, MA',
+    description: 'Replace this with an actual roast. The funnier and more personal, the better.',
+  },
+  {
+    name: 'Guy #10',
+    role: null,
+    photo: null,
+    location: 'Seattle, WA',
+    description: 'Replace this with an actual roast. The funnier and more personal, the better.',
+  },
+];
+
+// Render cards
+const grid = document.getElementById('crewGrid');
+crew.forEach((member, i) => {
+  const card = document.createElement('div');
+  card.setAttribute('data-reveal', '');
+  card.style.transitionDelay = `${i * 0.08}s`;
+
+  const badgeHTML = member.role === 'groom'
+    ? '<span class="groom-badge absolute top-4 right-4 text-xs font-bold tracking-wider uppercase px-3 py-1 rounded z-10">The Groom</span>'
+    : member.role === 'best-man'
+    ? '<span class="absolute top-4 right-4 bg-bark-50/10 backdrop-blur text-bark-50 text-xs font-bold tracking-wider uppercase px-3 py-1 rounded border border-bark-50/20 z-10">Best Man</span>'
+    : '';
+
+  const photoHTML = member.photo
+    ? `<img src="${member.photo}" alt="${member.name}" class="crew-photo w-full h-full object-cover" />`
+    : `<div class="crew-photo photo-placeholder w-full h-full">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg>
+       </div>`;
+
+  card.className = 'crew-card bg-bark-900/60 border border-summit-800/30 rounded-lg overflow-hidden';
+  card.innerHTML = `
+    <div class="relative aspect-[4/3] overflow-hidden">
+      ${badgeHTML}
+      ${photoHTML}
+      <div class="absolute inset-0 bg-gradient-to-t from-bark-950/80 via-transparent to-transparent"></div>
+    </div>
+    <div class="p-6">
+      <h3 class="font-display text-3xl text-bark-50 tracking-wide mb-1">${member.name.toUpperCase()}</h3>
+      ${member.location ? `<p class="flex items-center gap-1.5 text-bark-400 text-xs mb-3"><svg class="w-3.5 h-3.5 text-ember-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>${member.location}</p>` : ''}
+      <p class="text-bark-300 text-sm leading-relaxed">${member.description}</p>
+    </div>
+  `;
+  grid.appendChild(card);
+});
+
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('revealed');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+
+// Mobile menu
+document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+  document.getElementById('mobileMenu').classList.toggle('hidden');
+});
+</script>
+</div><!-- /siteContent -->
+
+<script>
+const HASH = '692d9a0017dd378ec184b9f80a64ef95e8d8e3ad944407abcaed25545e46a7be';
+async function sha256(str) {
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+}
+function unlock() {
+  document.getElementById('authGate').classList.add('hidden');
+  document.getElementById('siteContent').classList.remove('hidden');
+}
+if (sessionStorage.getItem('pc-auth') === 'true') {
+  unlock();
+}
+document.getElementById('authForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const val = document.getElementById('authInput').value;
+  if (await sha256(val) === HASH) {
+    sessionStorage.setItem('pc-auth', 'true');
+    unlock();
+  } else {
+    document.getElementById('authError').classList.remove('hidden');
+    document.getElementById('authInput').value = '';
+    document.getElementById('authInput').focus();
+  }
+});
+</script>
+</body>
+</html>

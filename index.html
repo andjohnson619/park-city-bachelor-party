@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Park City Bachelor Party - Aug 20-23</title>
+<meta name="description" content="Four days of mountain biking, hiking, and Main Street mayhem in Park City, Utah. Aug 20-23, 2026." />
+<meta property="og:title" content="Park City Bachelor Party - Aug 20-23" />
+<meta property="og:description" content="Four days of mountain biking, hiking, and Main Street mayhem in the Wasatch Mountains." />
+<meta property="og:type" content="website" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x26F0;</text></svg>" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: {
+        display: ['"Bebas Neue"', 'sans-serif'],
+        body: ['"Space Grotesk"', 'sans-serif'],
+      },
+      colors: {
+        bark: { 50: '#faf6f1', 100: '#f0e6d6', 200: '#e0ccad', 300: '#ccab7c', 400: '#b98c55', 500: '#a87640', 600: '#8f5f35', 700: '#75492d', 800: '#623d2b', 900: '#533527', 950: '#2f1a13' },
+        pine: { 50: '#f3f6f3', 100: '#e3e9e2', 200: '#c7d4c5', 300: '#a1b69e', 400: '#779375', 500: '#587558', 600: '#455d44', 700: '#384b38', 800: '#2e3d2e', 900: '#273227', 950: '#131b13' },
+        summit: { 50: '#f7f7f6', 100: '#e5e3df', 200: '#cac6bf', 300: '#aaa498', 400: '#918979', 500: '#837763', 600: '#6a6050', 700: '#574e42', 800: '#4a4339', 900: '#403b33', 950: '#231f1b' },
+        ember: { 400: '#f59e0b', 500: '#d97706', 600: '#b45309' },
+      },
+    },
+  },
+}
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Space Grotesk', sans-serif; }
+  .font-display { font-family: 'Bebas Neue', sans-serif; }
+
+  .hero-bg {
+    background: linear-gradient(175deg, #131b13 0%, #2f1a13 40%, #533527 70%, #d97706 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+
+  .topo-overlay {
+    position: absolute;
+    inset: 0;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cpath d='M0 200 Q100 180 200 200 T400 200' fill='none' stroke='%23fff' stroke-width='0.5'/%3E%3Cpath d='M0 160 Q100 140 200 160 T400 160' fill='none' stroke='%23fff' stroke-width='0.5'/%3E%3Cpath d='M0 240 Q100 220 200 240 T400 240' fill='none' stroke='%23fff' stroke-width='0.5'/%3E%3Cpath d='M0 120 Q100 100 200 120 T400 120' fill='none' stroke='%23fff' stroke-width='0.5'/%3E%3Cpath d='M0 280 Q100 260 200 280 T400 280' fill='none' stroke='%23fff' stroke-width='0.5'/%3E%3Cpath d='M0 80 Q100 60 200 80 T400 80' fill='none' stroke='%23fff' stroke-width='0.5'/%3E%3Cpath d='M0 320 Q100 300 200 320 T400 320' fill='none' stroke='%23fff' stroke-width='0.5'/%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+
+  .grain {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  }
+
+  .mountain-silhouette {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-40px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  .animate-fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
+  .animate-fade-in { animation: fadeIn 1s ease-out forwards; }
+  .animate-slide-in { animation: slideInLeft 0.6s ease-out forwards; }
+  .stagger-1 { animation-delay: 0.1s; opacity: 0; }
+  .stagger-2 { animation-delay: 0.2s; opacity: 0; }
+  .stagger-3 { animation-delay: 0.3s; opacity: 0; }
+  .stagger-4 { animation-delay: 0.4s; opacity: 0; }
+  .stagger-5 { animation-delay: 0.5s; opacity: 0; }
+  .stagger-6 { animation-delay: 0.6s; opacity: 0; }
+
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  }
+  [data-reveal].revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .day-card {
+    border-left: 3px solid;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .day-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  }
+
+  .nav-link {
+    position: relative;
+    transition: color 0.2s;
+  }
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #d97706;
+    transition: width 0.3s ease;
+  }
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    width: 100%;
+  }
+
+  .checkbox-custom {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #6a6050;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s;
+    flex-shrink: 0;
+  }
+  .checkbox-custom:checked {
+    background: #d97706;
+    border-color: #d97706;
+  }
+  .checkbox-custom:checked::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 1px;
+    width: 6px;
+    height: 11px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+
+  .cost-row:nth-child(even) {
+    background: rgba(255,255,255,0.02);
+  }
+
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #231f1b; }
+  ::-webkit-scrollbar-thumb { background: #574e42; border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: #6a6050; }
+</style>
+
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:_dlc_DocId msdt:dt="string">D2SDC4EDXKYS-323359890-26634</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">6fb46415-df38-440e-bacf-c84bec548fb0</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">https://mckinsey.sharepoint.com/sites/spe-int-vau1ckx4plzypm2pf72/_layouts/15/DocIdRedir.aspx?ID=D2SDC4EDXKYS-323359890-26634, D2SDC4EDXKYS-323359890-26634</mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+<body class="bg-bark-950 text-bark-100">
+
+<!-- PASSWORD GATE -->
+<div id="authGate" class="fixed inset-0 z-[10000] bg-bark-950 flex items-center justify-center px-6">
+  <div class="max-w-sm w-full text-center">
+    <p class="font-display text-6xl sm:text-7xl text-bark-50 tracking-wide mb-2">PARK CITY</p>
+    <p class="font-display text-3xl text-ember-400 tracking-wider mb-8">BACHELOR PARTY '26</p>
+    <p class="text-bark-400 text-sm mb-6">Enter the password to get in.</p>
+    <form id="authForm" class="space-y-4">
+      <input id="authInput" type="password" autofocus placeholder="Password" class="w-full bg-bark-900/80 border border-summit-700/50 rounded px-4 py-3 text-bark-100 text-center placeholder-bark-600 focus:outline-none focus:border-ember-500 transition-colors tracking-wider" />
+      <button type="submit" class="w-full bg-ember-500 hover:bg-ember-600 text-bark-950 font-semibold py-3 rounded transition-colors text-sm tracking-wider uppercase">Enter</button>
+      <p id="authError" class="text-red-400 text-sm hidden">Wrong password. Try again.</p>
+    </form>
+  </div>
+</div>
+
+<div id="siteContent" class="hidden">
+<div class="grain"></div>
+
+<!-- NAV -->
+<nav id="mainNav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" style="background: transparent;">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="#hero" class="font-display text-2xl tracking-wider text-ember-400 hover:text-ember-500 transition-colors">PC '26</a>
+    <div class="hidden md:flex items-center gap-8 text-sm font-medium text-bark-200">
+      <a href="#schedule" class="nav-link hover:text-ember-400">Schedule</a>
+      <a href="crew.html" class="nav-link hover:text-ember-400">The Crew</a>
+      <a href="#logistics" class="nav-link hover:text-ember-400">Logistics</a>
+      <a href="#packing" class="nav-link hover:text-ember-400">Packing</a>
+      <a href="#costs" class="nav-link hover:text-ember-400">Costs</a>
+      <a href="#rsvp" class="nav-link hover:text-ember-400 bg-ember-500/20 px-4 py-1.5 rounded border border-ember-500/30">RSVP</a>
+    </div>
+    <button id="mobileMenuBtn" class="md:hidden text-bark-200 hover:text-ember-400 transition-colors">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+  <div id="mobileMenu" class="md:hidden hidden bg-bark-950/95 backdrop-blur border-t border-summit-800/30">
+    <div class="px-6 py-4 flex flex-col gap-4 text-sm font-medium text-bark-200">
+      <a href="#schedule" class="mobile-nav hover:text-ember-400">Schedule</a>
+      <a href="crew.html" class="mobile-nav hover:text-ember-400">The Crew</a>
+      <a href="#logistics" class="mobile-nav hover:text-ember-400">Logistics</a>
+      <a href="#packing" class="mobile-nav hover:text-ember-400">Packing</a>
+      <a href="#costs" class="mobile-nav hover:text-ember-400">Costs</a>
+      <a href="#rsvp" class="mobile-nav hover:text-ember-400">RSVP</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero" class="hero-bg min-h-screen flex flex-col items-center justify-center text-center px-6 relative">
+  <div class="topo-overlay"></div>
+
+  <svg class="mountain-silhouette" viewBox="0 0 1440 200" preserveAspectRatio="none" fill="#2f1a13">
+    <path d="M0,200 L0,120 L80,100 L160,130 L240,80 L320,110 L400,60 L480,90 L560,40 L640,70 L720,30 L800,65 L880,45 L960,75 L1040,50 L1120,85 L1200,55 L1280,95 L1360,70 L1440,100 L1440,200 Z" opacity="0.5"/>
+    <path d="M0,200 L0,150 L120,130 L200,155 L300,110 L400,140 L520,100 L600,125 L700,90 L800,120 L900,95 L1000,130 L1100,105 L1200,135 L1300,115 L1440,140 L1440,200 Z" opacity="0.7"/>
+    <path d="M0,200 L0,170 L100,160 L200,175 L350,145 L500,165 L620,150 L750,170 L900,155 L1050,168 L1200,158 L1350,172 L1440,165 L1440,200 Z"/>
+  </svg>
+
+  <div class="relative z-10 max-w-4xl">
+    <p class="animate-fade-in-up stagger-1 text-ember-400 font-body text-sm md:text-base tracking-[0.3em] uppercase mb-6">August 20 - 23, 2026</p>
+    <h1 class="animate-fade-in-up stagger-2 font-display text-7xl sm:text-8xl md:text-9xl lg:text-[10rem] leading-[0.85] tracking-wide text-bark-50 mb-2">
+      PARK CITY
+    </h1>
+    <p class="animate-fade-in-up stagger-3 font-display text-4xl sm:text-5xl md:text-6xl tracking-wider text-ember-400 mb-8">BACHELOR PARTY</p>
+    <p class="animate-fade-in-up stagger-4 text-bark-300 text-lg md:text-xl font-light mb-12">Four days of mountain biking, hiking, and Main Street mayhem in the Wasatch Mountains.</p>
+
+    <div class="animate-fade-in-up stagger-5 flex flex-wrap justify-center gap-4 md:gap-8 mb-16">
+      <div class="text-center">
+        <span id="cd-days" class="font-display text-5xl md:text-6xl text-bark-50 block">--</span>
+        <span class="text-bark-400 text-xs tracking-[0.2em] uppercase">Days</span>
+      </div>
+      <div class="text-ember-500/40 font-display text-5xl md:text-6xl">:</div>
+      <div class="text-center">
+        <span id="cd-hours" class="font-display text-5xl md:text-6xl text-bark-50 block">--</span>
+        <span class="text-bark-400 text-xs tracking-[0.2em] uppercase">Hours</span>
+      </div>
+      <div class="text-ember-500/40 font-display text-5xl md:text-6xl">:</div>
+      <div class="text-center">
+        <span id="cd-mins" class="font-display text-5xl md:text-6xl text-bark-50 block">--</span>
+        <span class="text-bark-400 text-xs tracking-[0.2em] uppercase">Minutes</span>
+      </div>
+      <div class="text-ember-500/40 font-display text-5xl md:text-6xl">:</div>
+      <div class="text-center">
+        <span id="cd-secs" class="font-display text-5xl md:text-6xl text-bark-50 block">--</span>
+        <span class="text-bark-400 text-xs tracking-[0.2em] uppercase">Seconds</span>
+      </div>
+    </div>
+
+    <a href="#schedule" class="animate-fade-in-up stagger-6 inline-flex items-center gap-2 bg-ember-500 hover:bg-ember-600 text-bark-950 font-semibold px-8 py-3 rounded transition-colors text-sm tracking-wide uppercase">
+      See the Plan
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section id="schedule" class="py-24 md:py-32 px-6 bg-bark-950 relative">
+  <div class="max-w-5xl mx-auto">
+    <div data-reveal class="mb-16">
+      <p class="text-ember-400 text-sm tracking-[0.3em] uppercase mb-3">The Itinerary</p>
+      <h2 class="font-display text-5xl md:text-7xl text-bark-50 tracking-wide">FOUR DAYS.<br/>ZERO REGRETS.</h2>
+    </div>
+
+    <!-- DAY 1 -->
+    <div data-reveal class="day-card border-ember-400 bg-bark-900/50 rounded-r-lg p-6 md:p-8 mb-6">
+      <div class="flex flex-col md:flex-row md:items-start gap-4 md:gap-8">
+        <div class="flex-shrink-0 md:w-48">
+          <span class="font-display text-4xl md:text-5xl text-ember-400">DAY 01</span>
+          <p class="text-bark-400 text-sm mt-1">Wed, Aug 20</p>
+          <p class="text-bark-300 font-medium mt-1">Arrival &amp; First Night</p>
+        </div>
+        <div class="flex-1 space-y-4">
+          <div class="flex gap-4 items-start">
+            <div class="flex-shrink-0 w-20 text-right">
+              <span class="text-ember-400/70 text-sm font-medium">AFTERNOON</span>
+            </div>
+            <div>
+              <p class="text-bark-100">Arrive in Park City. SLC airport is 35 min out. Check into the rental house, crack open some beers, and get settled.</p>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <div class="flex-shrink-0 w-20 text-right">
+              <span class="text-ember-400/70 text-sm font-medium">EVENING</span>
+            </div>
+            <div>
+              <p class="text-bark-100">Group dinner at <strong class="text-bark-50">High West Saloon</strong> on Main Street. Award-winning craft distillery with a laid-back mountain vibe; perfect for the crew to settle in over whiskey and elevated pub food.</p>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <div class="flex-shrink-0 w-20 text-right">
+              <span class="text-ember-400/70 text-sm font-medium">NIGHT</span>
+            </div>
+            <div>
+              <p class="text-bark-100">Bar hop Main Street. Start at <strong class="text-bark-50">No Name Saloon</strong> (iconic dive, the bar that made Park City famous), then <strong class="text-bark-50">The Cabin</strong> (live music, cocktails), and finish at <strong class="text-bark-50">Star Bar</strong> (sleek lounge).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAY 2 -->
+    <div data-reveal class="day-card border-pine-500 bg-bark-900/50 rounded-r-lg p-6 md:p-8 mb-6">
+      <div class="flex flex-col md:flex-row md:items-start gap-4 md:gap-8">
+        <div class="flex-shrink-0 md:w-48">
+          <span class="font-display text-4xl md:text-5xl text-pine-400">DAY 02</span>
+          <p class="text-bark-400 text-sm mt-1">Thu, Aug 21</p>
+          <p class="text-bark-300 font-medium mt-1">Mountain Biking Day</p>
+        </div>
+        <div class="flex-1 space-y-4">
+          <div class="flex gap-4 items-start">
+            <div class="flex-shrink-0 w-20 text-right">
+              <span class="text-pine-400/70 text-sm font-medium">MORNING</span>
+            </div>
+            <div>
+              <p class="text-bark-100">Guided mountain biking with <strong class="text-bark-50">All Seasons Adventures</strong>. Full-suspension bikes, helmets, water, and snacks included. 2-3 hours of riding across Park City's 450+ miles of world-class trail (IMBA Gold-Level Ride Center). Routes for all skill levels.</p>
+              <p class="text-bark-400 text-sm mt-1">~$145/person</p>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <div class="flex-shrink-0 w-20 text-right">
+              <span class="text-pine-400/70 text-sm font-medium">AFTERNOON</span>
+            </div>
+            <div>
+              <p class="text-bark-100">Recovery beers at <strong class="text-bark-50">Wasatch Brew Pub</strong>. Then back to the house for pool, yard games, and general decompression.</p>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <div class="flex-shrink-0 w-20 text-right">
+              <span class="text-pine-400/70 text-sm font-medium">EVENING</span>
+            </div>
+            <div>
+              <p class="text-bark-100">Dinner at <strong class="text-bark-50">350 Main</strong>. Upscale American with private party space for groups of 10+. Contemporary menu with mountain views.</p>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <div class="flex-shrink-0 w-20 text-right">
+              <span class="text-pine-400/70 text-sm font-medium">NIGHT</span>
+            </div>
+            <div>
+              <p class="text-bark-100"><strong class="text-bark-50">Velvet Room</strong> for craft cocktails in a swanky lounge setting, then <strong class="text-bark-50">Downstairs</strong> for late-night DJ sets.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAY 3 -->
+    <div data-reveal class="day-card border-bark-400 bg-bark-900/50 rounded-r-lg p-6 md:p-8 mb-6">
+      <div class="flex flex-col md:flex-row md:items-start gap-4 md:gap-8">
+        <div class="flex-shrink-0 md:w-48">
+          <span class="font-display text-4xl md:text-5xl text-bark-300">DAY 03</span>
+          <p class="text-bark-400 text-sm mt-1">Fri, Aug 22</p>
+          <p class="text-bark-300 font-medium mt-1">Adventure Day &amp; Big Night</p>
+        </div>
+        <div class="flex-1 space-y-4">
+          <div class="flex gap-4 items-start">
+            <div class="flex-shrink-0 w-20 text-right">
+              <span class="text-bark-300/70 text-sm font-medium">MORNING</span>
+            </div>
+            <div>
+              <p class="text-bark-100"><strong class="text-bark-50">Utah Olympic Park</strong>. Ride the real Olympic bobsled track (5 G's of force) and hit the zip line at up to 50 mph. Watch future Olympians train between runs.</p>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <div class="flex-shrink-0 w-20 text-right">
+              <span class="text-bark-300/70 text-sm font-medium">AFTERNOON</span>
+            </div>
+            <div>
+              <p class="text-bark-100">Hike <strong class="text-bark-50">Lost Prospector Trail</strong> (6 miles of flowing singletrack above Old Town, scenic and moderate) or the legendary <strong class="text-bark-50">Wasatch Crest Trail</strong> for more ambitious hikers (10,000 ft elevation, panoramic views).</p>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <div class="flex-shrink-0 w-20 text-right">
+              <span class="text-bark-300/70 text-sm font-medium">EVENING</span>
+            </div>
+            <div>
+              <p class="text-bark-100">The big dinner at <strong class="text-bark-50">Prime Steak House &amp; Piano Bar</strong>. Wagyu, filet, live piano. Handles groups of 10. This is the main event dinner.</p>
+              <p class="text-bark-400 text-sm mt-1">Reservations: (435) 655-9739</p>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <div class="flex-shrink-0 w-20 text-right">
+              <span class="text-bark-300/70 text-sm font-medium">NIGHT</span>
+            </div>
+            <div>
+              <p class="text-bark-100">Full Main Street bar crawl. <strong class="text-bark-50">O'Shucks</strong> (dive bar warm-up) &#8594; <strong class="text-bark-50">No Name Saloon</strong> (round two) &#8594; <strong class="text-bark-50">The Spur</strong> (dancing) &#8594; <strong class="text-bark-50">Park City Social Aid &amp; Pleasure Club</strong> (craft cocktails, close it out).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAY 4 -->
+    <div data-reveal class="day-card border-summit-500 bg-bark-900/50 rounded-r-lg p-6 md:p-8">
+      <div class="flex flex-col md:flex-row md:items-start gap-4 md:gap-8">
+        <div class="flex-shrink-0 md:w-48">
+          <span class="font-display text-4xl md:text-5xl text-summit-400">DAY 04</span>
+          <p class="text-bark-400 text-sm mt-1">Sat, Aug 23</p>
+          <p class="text-bark-300 font-medium mt-1">Send-off</p>
+        </div>
+        <div class="flex-1 space-y-4">
+          <div class="flex gap-4 items-start">
+            <div class="flex-shrink-0 w-20 text-right">
+              <span class="text-summit-400/70 text-sm font-medium">MORNING</span>
+            </div>
+            <div>
+              <p class="text-bark-100">Brunch at <strong class="text-bark-50">Riverhorse on Main</strong>. 16-time Forbes Travel Guide Four-Star Award recipient. Contemporary American with mountain views and live jazz. A proper send-off.</p>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <div class="flex-shrink-0 w-20 text-right">
+              <span class="text-summit-400/70 text-sm font-medium">LATE AM</span>
+            </div>
+            <div>
+              <p class="text-bark-100">Pack up, say your goodbyes, and head to SLC airport (35 min). Or stay another night if you're not ready to face reality.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOGISTICS -->
+<section id="logistics" class="py-24 md:py-32 px-6 bg-gradient-to-b from-bark-950 via-bark-900/80 to-bark-950 relative">
+  <div class="max-w-5xl mx-auto">
+    <div data-reveal class="mb-16">
+      <p class="text-ember-400 text-sm tracking-[0.3em] uppercase mb-3">Know Before You Go</p>
+      <h2 class="font-display text-5xl md:text-7xl text-bark-50 tracking-wide">LOGISTICS</h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <!-- Flights -->
+      <div data-reveal class="bg-bark-900/60 border border-summit-800/30 rounded-lg p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <svg class="w-6 h-6 text-ember-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"/></svg>
+          <h3 class="font-display text-2xl text-bark-50 tracking-wide">FLIGHTS</h3>
+        </div>
+        <p class="text-bark-300 mb-2">Fly into <strong class="text-bark-100">Salt Lake City International (SLC)</strong>.</p>
+        <p class="text-bark-300">Park City is just 35 minutes east on I-80. Book early for the best rates; SLC is a Delta hub with plenty of direct routes.</p>
+      </div>
+
+      <!-- Lodging -->
+      <div data-reveal class="bg-bark-900/60 border border-summit-800/30 rounded-lg p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <svg class="w-6 h-6 text-ember-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"/></svg>
+          <h3 class="font-display text-2xl text-bark-50 tracking-wide">LODGING</h3>
+        </div>
+        <p class="text-bark-300 mb-3">We've got the house booked. Check out the listing:</p>
+        <a href="https://www.airbnb.com/rooms/44552013" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-ember-500/15 border border-ember-500/30 text-ember-400 hover:text-ember-500 hover:bg-ember-500/25 px-4 py-2 rounded transition-all text-sm font-medium">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+          View the Airbnb Listing
+        </a>
+      </div>
+
+      <!-- Getting Around -->
+      <div data-reveal class="bg-bark-900/60 border border-summit-800/30 rounded-lg p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <svg class="w-6 h-6 text-ember-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0H21M3.375 14.25h17.25m0 0V6.169a2.25 2.25 0 00-.659-1.591l-2.67-2.67a2.25 2.25 0 00-1.59-.658H5.625A2.25 2.25 0 003.375 3.5v10.75"/></svg>
+          <h3 class="font-display text-2xl text-bark-50 tracking-wide">GETTING AROUND</h3>
+        </div>
+        <p class="text-bark-300 mb-2">Park City has <strong class="text-bark-100">free public transit</strong> (bus system) that covers the whole town. Main Street is walkable from most rentals.</p>
+        <p class="text-bark-300">For airport transfers and activity shuttles, we'll coordinate rideshares. Uber/Lyft works but can be slow; schedule rides in advance when possible.</p>
+      </div>
+
+      <!-- Weather & Elevation -->
+      <div data-reveal class="bg-bark-900/60 border border-summit-800/30 rounded-lg p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <svg class="w-6 h-6 text-ember-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-10.233 2.33A4.502 4.502 0 002.25 15z"/></svg>
+          <h3 class="font-display text-2xl text-bark-50 tracking-wide">WEATHER &amp; ELEVATION</h3>
+        </div>
+        <p class="text-bark-300 mb-2">Park City sits at <strong class="text-bark-100">7,000 ft</strong> elevation (trails go up to 10,000 ft). Late August brings warm days (<strong class="text-bark-100">70-85&deg;F</strong>) and cool nights (<strong class="text-bark-100">45-55&deg;F</strong>).</p>
+        <p class="text-bark-300">Hydrate aggressively. The altitude is real, especially if you're coming from sea level. Drink water before you drink beer.</p>
+      </div>
+    </div>
+
+    <!-- Map Embed -->
+    <div data-reveal class="mt-8 rounded-lg overflow-hidden border border-summit-800/30 h-64 md:h-80">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48736.36447854994!2d-111.52089437363053!3d40.65888082814903!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87520f632c9ebc6f%3A0x7ab516e977b50f82!2sPark%20City%2C%20UT!5e0!3m2!1sen!2sus!4v1710000000000!5m2!1sen!2sus"
+        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        class="grayscale contrast-125 opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+      ></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- PACKING LIST -->
+<section id="packing" class="py-24 md:py-32 px-6 bg-bark-950 relative">
+  <div class="max-w-5xl mx-auto">
+    <div data-reveal class="mb-16">
+      <p class="text-ember-400 text-sm tracking-[0.3em] uppercase mb-3">Don't Forget</p>
+      <h2 class="font-display text-5xl md:text-7xl text-bark-50 tracking-wide">PACKING LIST</h2>
+      <p class="text-bark-400 mt-3">Check items off as you pack. Your progress saves automatically.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="packingGrid">
+      <!-- Columns injected by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- COSTS -->
+<section id="costs" class="py-24 md:py-32 px-6 bg-gradient-to-b from-bark-950 via-bark-900/80 to-bark-950 relative">
+  <div class="max-w-4xl mx-auto">
+    <div data-reveal class="mb-16">
+      <p class="text-ember-400 text-sm tracking-[0.3em] uppercase mb-3">The Damage</p>
+      <h2 class="font-display text-5xl md:text-7xl text-bark-50 tracking-wide">COST ESTIMATE</h2>
+      <p class="text-bark-400 mt-3">Per-person estimates based on 10 guys splitting everything. Actual totals may vary.</p>
+    </div>
+
+    <div data-reveal class="bg-bark-900/60 border border-summit-800/30 rounded-lg overflow-hidden">
+      <div class="grid grid-cols-3 text-sm font-semibold text-bark-400 tracking-wider uppercase px-6 py-4 border-b border-summit-800/30">
+        <span>Item</span>
+        <span class="text-right">Est. Total</span>
+        <span class="text-right">Per Person</span>
+      </div>
+      <div id="costTable">
+        <!-- Rows injected by JS -->
+      </div>
+      <div class="grid grid-cols-3 px-6 py-5 border-t-2 border-ember-500/50 bg-bark-900/80">
+        <span class="font-display text-xl text-bark-50 tracking-wide">TOTAL</span>
+        <span id="costTotal" class="text-right font-display text-xl text-ember-400"></span>
+        <span id="costPerPerson" class="text-right font-display text-xl text-ember-400"></span>
+      </div>
+    </div>
+
+    <div data-reveal class="mt-8 bg-bark-900/60 border border-ember-500/30 rounded-lg p-6 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+      <div class="flex-shrink-0 w-12 h-12 bg-ember-500/20 rounded-full flex items-center justify-center">
+        <svg class="w-6 h-6 text-ember-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      </div>
+      <div>
+        <p class="text-bark-100 font-semibold mb-1">Payment</p>
+        <p class="text-bark-300">Send your share via <strong class="text-bark-100">Venmo</strong> to <strong class="text-ember-400">@YourVenmoHandle</strong> (or Zelle/PayPal). Please send before Aug 10 so we can lock in reservations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RSVP -->
+<section id="rsvp" class="py-24 md:py-32 px-6 bg-bark-950 relative">
+  <div class="max-w-3xl mx-auto text-center">
+    <div data-reveal class="mb-12">
+      <p class="text-ember-400 text-sm tracking-[0.3em] uppercase mb-3">Lock It In</p>
+      <h2 class="font-display text-5xl md:text-7xl text-bark-50 tracking-wide">RSVP</h2>
+      <p class="text-bark-400 mt-3 max-w-xl mx-auto">Let us know you're coming so we can book the right house, reserve the right tables, and plan the right amount of chaos.</p>
+    </div>
+
+    <div data-reveal class="bg-bark-900/60 border border-summit-800/30 rounded-lg p-8 text-left">
+      <form id="rsvpForm" class="space-y-6">
+        <div>
+          <label class="block text-bark-300 text-sm font-medium mb-2">Your Name</label>
+          <input type="text" required class="w-full bg-bark-950 border border-summit-700/50 rounded px-4 py-3 text-bark-100 placeholder-bark-600 focus:outline-none focus:border-ember-500 transition-colors" placeholder="First and last" />
+        </div>
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-bark-300 text-sm font-medium mb-2">Are you in?</label>
+            <select required class="w-full bg-bark-950 border border-summit-700/50 rounded px-4 py-3 text-bark-100 focus:outline-none focus:border-ember-500 transition-colors">
+              <option value="">Select</option>
+              <option value="yes">Hell yes</option>
+              <option value="maybe">Maybe (let me check)</option>
+              <option value="no">Can't make it</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-bark-300 text-sm font-medium mb-2">Arrival Date</label>
+            <select class="w-full bg-bark-950 border border-summit-700/50 rounded px-4 py-3 text-bark-100 focus:outline-none focus:border-ember-500 transition-colors">
+              <option value="">Select</option>
+              <option value="aug19">Tue, Aug 19 (early bird)</option>
+              <option value="aug20">Wed, Aug 20 (Day 1)</option>
+              <option value="aug21">Thu, Aug 21 (Day 2)</option>
+            </select>
+          </div>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-bark-300 text-sm font-medium mb-2">Departure Date</label>
+            <select class="w-full bg-bark-950 border border-summit-700/50 rounded px-4 py-3 text-bark-100 focus:outline-none focus:border-ember-500 transition-colors">
+              <option value="">Select</option>
+              <option value="aug23">Sat, Aug 23 (Day 4)</option>
+              <option value="aug24">Sun, Aug 24 (staying extra)</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-bark-300 text-sm font-medium mb-2">Mountain Biking Skill</label>
+            <select class="w-full bg-bark-950 border border-summit-700/50 rounded px-4 py-3 text-bark-100 focus:outline-none focus:border-ember-500 transition-colors">
+              <option value="">Select</option>
+              <option value="beginner">Beginner (keep it chill)</option>
+              <option value="intermediate">Intermediate (let's ride)</option>
+              <option value="advanced">Advanced (send it)</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <label class="block text-bark-300 text-sm font-medium mb-2">Dietary Restrictions / Anything Else</label>
+          <textarea rows="3" class="w-full bg-bark-950 border border-summit-700/50 rounded px-4 py-3 text-bark-100 placeholder-bark-600 focus:outline-none focus:border-ember-500 transition-colors" placeholder="Allergies, dietary needs, activity preferences, etc."></textarea>
+        </div>
+        <button type="submit" class="w-full bg-ember-500 hover:bg-ember-600 text-bark-950 font-semibold py-3 rounded transition-colors text-sm tracking-wider uppercase">
+          Submit RSVP
+        </button>
+      </form>
+      <div id="rsvpSuccess" class="hidden text-center py-12">
+        <svg class="w-16 h-16 text-ember-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <h3 class="font-display text-3xl text-bark-50 tracking-wide mb-2">YOU'RE LOCKED IN</h3>
+        <p class="text-bark-300">See you in Park City. Don't forget to send your Venmo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="py-12 px-6 border-t border-summit-800/20">
+  <div class="max-w-5xl mx-auto text-center">
+    <p class="font-display text-3xl text-bark-50 tracking-wider mb-2">PARK CITY '26</p>
+    <p class="text-bark-500 text-sm">Four days. Ten guys. One last ride before the ring.</p>
+  </div>
+</footer>
+
+<script>
+// Countdown timer
+function updateCountdown() {
+  const target = new Date('2026-08-20T12:00:00-06:00');
+  const now = new Date();
+  const diff = target - now;
+  if (diff <= 0) {
+    document.getElementById('cd-days').textContent = '00';
+    document.getElementById('cd-hours').textContent = '00';
+    document.getElementById('cd-mins').textContent = '00';
+    document.getElementById('cd-secs').textContent = '00';
+    return;
+  }
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  const secs = Math.floor((diff % (1000 * 60)) / 1000);
+  document.getElementById('cd-days').textContent = String(days).padStart(2, '0');
+  document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+  document.getElementById('cd-mins').textContent = String(mins).padStart(2, '0');
+  document.getElementById('cd-secs').textContent = String(secs).padStart(2, '0');
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+// Nav scroll effect
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 100) {
+    nav.style.background = 'rgba(35, 31, 27, 0.95)';
+    nav.style.backdropFilter = 'blur(12px)';
+    nav.style.boxShadow = '0 1px 0 rgba(106, 96, 80, 0.2)';
+  } else {
+    nav.style.background = 'transparent';
+    nav.style.backdropFilter = 'none';
+    nav.style.boxShadow = 'none';
+  }
+});
+
+// Mobile menu
+document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+  document.getElementById('mobileMenu').classList.toggle('hidden');
+});
+document.querySelectorAll('.mobile-nav').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.add('hidden');
+  });
+});
+
+// Active nav highlighting
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-link');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(section => {
+    const top = section.offsetTop - 120;
+    if (window.scrollY >= top) current = section.getAttribute('id');
+  });
+  navLinks.forEach(link => {
+    link.classList.remove('active', 'text-ember-400');
+    if (link.getAttribute('href') === '#' + current) {
+      link.classList.add('active', 'text-ember-400');
+    }
+  });
+}, { passive: true });
+
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('revealed');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+
+// Packing list data
+const packingData = {
+  'Outdoor Gear': [
+    'Mountain biking shorts / athletic wear',
+    'Hiking boots or trail shoes',
+    'Moisture-wicking shirts (2-3)',
+    'Light rain jacket / windbreaker',
+    'Sunglasses (polarized)',
+    'Baseball cap or sun hat',
+    'Daypack / small backpack',
+    'Water bottle (reusable)',
+  ],
+  'Going Out': [
+    'Jeans or chinos (2 pairs)',
+    'Button-down or nice polo (2)',
+    'Casual sneakers / going-out shoes',
+    'Light jacket or flannel for evenings',
+  ],
+  'Essentials': [
+    'Sunscreen (SPF 50+)',
+    'Lip balm with SPF',
+    'Deodorant / toiletries',
+    'Advil / Tylenol',
+    'Phone charger / portable battery',
+    'ID and credit cards',
+    'Cash for tips',
+    'Health insurance card',
+  ],
+  'Altitude Prep': [
+    'Electrolyte packets (Liquid IV, etc.)',
+    'Extra water bottle',
+    'Altitude sickness meds (Diamox, optional)',
+    'Melatonin for sleep adjustment',
+  ],
+  'Nice to Have': [
+    'GoPro or action camera',
+    'Swimsuit (hot tub)',
+    'Flip flops / slides',
+    'Playing cards / poker chips',
+    'Bluetooth speaker (portable)',
+    'Costumes / bachelor party gear',
+  ],
+};
+
+// Render packing list
+const packingGrid = document.getElementById('packingGrid');
+const savedChecks = JSON.parse(localStorage.getItem('pc-packing') || '{}');
+
+Object.entries(packingData).forEach(([category, items]) => {
+  const col = document.createElement('div');
+  col.setAttribute('data-reveal', '');
+  col.className = 'bg-bark-900/60 border border-summit-800/30 rounded-lg p-6';
+  col.innerHTML = `<h3 class="font-display text-xl text-ember-400 tracking-wide mb-4">${category.toUpperCase()}</h3>`;
+  const list = document.createElement('div');
+  list.className = 'space-y-3';
+  items.forEach((item, i) => {
+    const key = `${category}-${i}`;
+    const checked = savedChecks[key] || false;
+    const row = document.createElement('label');
+    row.className = 'flex items-center gap-3 cursor-pointer group';
+    row.innerHTML = `
+      <input type="checkbox" class="checkbox-custom" ${checked ? 'checked' : ''} data-key="${key}" />
+      <span class="text-bark-300 group-hover:text-bark-100 transition-colors text-sm ${checked ? 'line-through opacity-50' : ''}">${item}</span>
+    `;
+    const cb = row.querySelector('input');
+    const label = row.querySelector('span');
+    cb.addEventListener('change', () => {
+      const checks = JSON.parse(localStorage.getItem('pc-packing') || '{}');
+      checks[key] = cb.checked;
+      localStorage.setItem('pc-packing', JSON.stringify(checks));
+      if (cb.checked) { label.classList.add('line-through', 'opacity-50'); }
+      else { label.classList.remove('line-through', 'opacity-50'); }
+    });
+    list.appendChild(row);
+  });
+  col.appendChild(list);
+  packingGrid.appendChild(col);
+});
+
+setTimeout(() => {
+  document.querySelectorAll('#packingGrid [data-reveal]').forEach(el => observer.observe(el));
+}, 50);
+
+// Cost data
+const costs = [
+  { item: 'Lodging (3 nights)', total: 4000, note: 'Large house near Main St' },
+  { item: 'Mountain Biking (guided)', total: 1450, note: 'All Seasons Adventures' },
+  { item: 'Olympic Park (bobsled + zip)', total: 1500, note: 'Group rate estimate' },
+  { item: 'Dinner: High West Saloon', total: 800, note: 'Night 1' },
+  { item: 'Dinner: 350 Main', total: 1200, note: 'Night 2' },
+  { item: 'Dinner: Prime Steak House', total: 1800, note: 'Night 3 (the big one)' },
+  { item: 'Brunch: Riverhorse on Main', total: 600, note: 'Day 4 send-off' },
+  { item: 'Bar Budget (3 nights)', total: 2000, note: 'Estimated across all nights' },
+  { item: 'Airport Transfers', total: 400, note: 'Rideshare / rental split' },
+];
+
+const costTable = document.getElementById('costTable');
+let grandTotal = 0;
+costs.forEach(c => {
+  grandTotal += c.total;
+  const pp = Math.round(c.total / 10);
+  const row = document.createElement('div');
+  row.className = 'cost-row grid grid-cols-3 px-6 py-3 border-b border-summit-800/20 items-center';
+  row.innerHTML = `
+    <div>
+      <p class="text-bark-200 text-sm">${c.item}</p>
+      <p class="text-bark-500 text-xs">${c.note}</p>
+    </div>
+    <p class="text-right text-bark-200 text-sm">$${c.total.toLocaleString()}</p>
+    <p class="text-right text-bark-200 text-sm">$${pp.toLocaleString()}</p>
+  `;
+  costTable.appendChild(row);
+});
+document.getElementById('costTotal').textContent = `$${grandTotal.toLocaleString()}`;
+document.getElementById('costPerPerson').textContent = `~$${Math.round(grandTotal / 10).toLocaleString()}/person`;
+
+// RSVP form
+document.getElementById('rsvpForm').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const form = e.target;
+  const formData = new FormData(form);
+  document.getElementById('rsvpForm').classList.add('hidden');
+  document.getElementById('rsvpSuccess').classList.remove('hidden');
+
+  // In production, you'd POST this to a Google Form or API endpoint.
+  // For now, we store it locally and show the success state.
+  const rsvpData = {};
+  form.querySelectorAll('input, select, textarea').forEach(el => {
+    if (el.name || el.type !== 'submit') {
+      rsvpData[el.previousElementSibling?.textContent || el.type] = el.value;
+    }
+  });
+  const existing = JSON.parse(localStorage.getItem('pc-rsvps') || '[]');
+  existing.push(rsvpData);
+  localStorage.setItem('pc-rsvps', JSON.stringify(existing));
+});
+</script>
+</div><!-- /siteContent -->
+
+<script>
+// Password gate (SHA-256 hash of the password so it's not plaintext in source)
+const HASH = '692d9a0017dd378ec184b9f80a64ef95e8d8e3ad944407abcaed25545e46a7be';
+async function sha256(str) {
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+}
+function unlock() {
+  document.getElementById('authGate').classList.add('hidden');
+  document.getElementById('siteContent').classList.remove('hidden');
+}
+if (sessionStorage.getItem('pc-auth') === 'true') {
+  unlock();
+}
+document.getElementById('authForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const val = document.getElementById('authInput').value;
+  if (await sha256(val) === HASH) {
+    sessionStorage.setItem('pc-auth', 'true');
+    unlock();
+  } else {
+    document.getElementById('authError').classList.remove('hidden');
+    document.getElementById('authInput').value = '';
+    document.getElementById('authInput').focus();
+  }
+});
+</script>
+</body>
+</html>
