@@ -987,7 +987,7 @@ setTimeout(() => {
 </div><!-- /siteContent -->
 
 <script>
-const HASH = '692d9a0017dd378ec184b9f80a64ef95e8d8e3ad944407abcaed25545e46a7be';
+const HASH = 'd4006eb067d6343d8130db27b581d5155463e4ff4e561cbfd4b065072ddd335f';
 async function sha256(str) {
   const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
   return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
