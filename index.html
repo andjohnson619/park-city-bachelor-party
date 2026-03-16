@@ -4,9 +4,9 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Park City Bachelor Party - Aug 20-23</title>
-<meta name="description" content="Four days of mountain biking, hiking, and Main Street mayhem in Park City, Utah. Aug 20-23, 2026." />
+<meta name="description" content="Four days of mountain biking, hiking, and good times in Park City, Utah. Aug 20-23, 2026." />
 <meta property="og:title" content="Park City Bachelor Party - Aug 20-23" />
-<meta property="og:description" content="Four days of mountain biking, hiking, and Main Street mayhem in the Wasatch Mountains." />
+<meta property="og:description" content="Four days of mountain biking, hiking, and good times in the Wasatch Mountains." />
 <meta property="og:type" content="website" />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x26F0;</text></svg>" />
 <script src="https://cdn.tailwindcss.com"></script>
@@ -70,8 +70,9 @@ tailwind.config = {
     position: absolute;
     bottom: 0;
     left: 0;
-    right: 0;
+    width: 100%;
     height: 200px;
+    display: block;
   }
 
   @keyframes fadeInUp {
@@ -82,13 +83,8 @@ tailwind.config = {
     from { opacity: 0; }
     to { opacity: 1; }
   }
-  @keyframes slideInLeft {
-    from { opacity: 0; transform: translateX(-40px); }
-    to { opacity: 1; transform: translateX(0); }
-  }
   .animate-fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
   .animate-fade-in { animation: fadeIn 1s ease-out forwards; }
-  .animate-slide-in { animation: slideInLeft 0.6s ease-out forwards; }
   .stagger-1 { animation-delay: 0.1s; opacity: 0; }
   .stagger-2 { animation-delay: 0.2s; opacity: 0; }
   .stagger-3 { animation-delay: 0.3s; opacity: 0; }
@@ -166,12 +162,41 @@ tailwind.config = {
     background: rgba(255,255,255,0.02);
   }
 
+  .crew-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .crew-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+  }
+  .crew-card:hover .crew-photo {
+    transform: scale(1.03);
+  }
+  .crew-photo {
+    transition: transform 0.4s ease;
+  }
+  .photo-placeholder {
+    background: linear-gradient(135deg, #533527 0%, #384b38 50%, #4a4339 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .photo-placeholder svg {
+    width: 64px;
+    height: 64px;
+    opacity: 0.3;
+    color: #ccab7c;
+  }
+  .groom-badge {
+    background: linear-gradient(135deg, #d97706, #f59e0b);
+    color: #2f1a13;
+  }
+
   ::-webkit-scrollbar { width: 8px; }
   ::-webkit-scrollbar-track { background: #231f1b; }
   ::-webkit-scrollbar-thumb { background: #574e42; border-radius: 4px; }
   ::-webkit-scrollbar-thumb:hover { background: #6a6050; }
 </style>
-
 
 <!--[if gte mso 9]><xml>
 <mso:CustomDocumentProperties>
@@ -206,11 +231,10 @@ tailwind.config = {
     <a href="#hero" class="font-display text-2xl tracking-wider text-ember-400 hover:text-ember-500 transition-colors">PC '26</a>
     <div class="hidden md:flex items-center gap-8 text-sm font-medium text-bark-200">
       <a href="#schedule" class="nav-link hover:text-ember-400">Schedule</a>
-      <a href="crew.html" class="nav-link hover:text-ember-400">The Crew</a>
+      <a href="#crew" class="nav-link hover:text-ember-400">The Crew</a>
       <a href="#logistics" class="nav-link hover:text-ember-400">Logistics</a>
       <a href="#packing" class="nav-link hover:text-ember-400">Packing</a>
       <a href="#costs" class="nav-link hover:text-ember-400">Costs</a>
-      <a href="#rsvp" class="nav-link hover:text-ember-400 bg-ember-500/20 px-4 py-1.5 rounded border border-ember-500/30">RSVP</a>
     </div>
     <button id="mobileMenuBtn" class="md:hidden text-bark-200 hover:text-ember-400 transition-colors">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -219,11 +243,10 @@ tailwind.config = {
   <div id="mobileMenu" class="md:hidden hidden bg-bark-950/95 backdrop-blur border-t border-summit-800/30">
     <div class="px-6 py-4 flex flex-col gap-4 text-sm font-medium text-bark-200">
       <a href="#schedule" class="mobile-nav hover:text-ember-400">Schedule</a>
-      <a href="crew.html" class="mobile-nav hover:text-ember-400">The Crew</a>
+      <a href="#crew" class="mobile-nav hover:text-ember-400">The Crew</a>
       <a href="#logistics" class="mobile-nav hover:text-ember-400">Logistics</a>
       <a href="#packing" class="mobile-nav hover:text-ember-400">Packing</a>
       <a href="#costs" class="mobile-nav hover:text-ember-400">Costs</a>
-      <a href="#rsvp" class="mobile-nav hover:text-ember-400">RSVP</a>
     </div>
   </div>
 </nav>
@@ -232,7 +255,7 @@ tailwind.config = {
 <section id="hero" class="hero-bg min-h-screen flex flex-col items-center justify-center text-center px-6 relative">
   <div class="topo-overlay"></div>
 
-  <svg class="mountain-silhouette" viewBox="0 0 1440 200" preserveAspectRatio="none" fill="#2f1a13">
+  <svg class="mountain-silhouette" viewBox="0 0 1440 200" preserveAspectRatio="none" fill="#2f1a13" xmlns="http://www.w3.org/2000/svg">
     <path d="M0,200 L0,120 L80,100 L160,130 L240,80 L320,110 L400,60 L480,90 L560,40 L640,70 L720,30 L800,65 L880,45 L960,75 L1040,50 L1120,85 L1200,55 L1280,95 L1360,70 L1440,100 L1440,200 Z" opacity="0.5"/>
     <path d="M0,200 L0,150 L120,130 L200,155 L300,110 L400,140 L520,100 L600,125 L700,90 L800,120 L900,95 L1000,130 L1100,105 L1200,135 L1300,115 L1440,140 L1440,200 Z" opacity="0.7"/>
     <path d="M0,200 L0,170 L100,160 L200,175 L350,145 L500,165 L620,150 L750,170 L900,155 L1050,168 L1200,158 L1350,172 L1440,165 L1440,200 Z"/>
@@ -244,7 +267,7 @@ tailwind.config = {
       PARK CITY
     </h1>
     <p class="animate-fade-in-up stagger-3 font-display text-4xl sm:text-5xl md:text-6xl tracking-wider text-ember-400 mb-8">BACHELOR PARTY</p>
-    <p class="animate-fade-in-up stagger-4 text-bark-300 text-lg md:text-xl font-light mb-12">Four days of mountain biking, hiking, and Main Street mayhem in the Wasatch Mountains.</p>
+    <p class="animate-fade-in-up stagger-4 text-bark-300 text-lg md:text-xl font-light mb-12">Four days of mountain biking, hiking, and good times in the Wasatch Mountains.</p>
 
     <div class="animate-fade-in-up stagger-5 flex flex-wrap justify-center gap-4 md:gap-8 mb-16">
       <div class="text-center">
@@ -280,7 +303,7 @@ tailwind.config = {
   <div class="max-w-5xl mx-auto">
     <div data-reveal class="mb-16">
       <p class="text-ember-400 text-sm tracking-[0.3em] uppercase mb-3">The Itinerary</p>
-      <h2 class="font-display text-5xl md:text-7xl text-bark-50 tracking-wide">FOUR DAYS.<br/>ZERO REGRETS.</h2>
+      <h2 class="font-display text-5xl md:text-7xl text-bark-50 tracking-wide">THE PLAN</h2>
     </div>
 
     <!-- DAY 1 -->
@@ -288,7 +311,7 @@ tailwind.config = {
       <div class="flex flex-col md:flex-row md:items-start gap-4 md:gap-8">
         <div class="flex-shrink-0 md:w-48">
           <span class="font-display text-4xl md:text-5xl text-ember-400">DAY 01</span>
-          <p class="text-bark-400 text-sm mt-1">Wed, Aug 20</p>
+          <p class="text-bark-400 text-sm mt-1">Thu, Aug 20</p>
           <p class="text-bark-300 font-medium mt-1">Arrival &amp; First Night</p>
         </div>
         <div class="flex-1 space-y-4">
@@ -297,7 +320,7 @@ tailwind.config = {
               <span class="text-ember-400/70 text-sm font-medium">AFTERNOON</span>
             </div>
             <div>
-              <p class="text-bark-100">Arrive in Park City. SLC airport is 35 min out. Check into the rental house, crack open some beers, and get settled.</p>
+              <p class="text-bark-100">Arrive in Park City via SLC (35 min drive). Check into the house and get settled in.</p>
             </div>
           </div>
           <div class="flex gap-4 items-start">
@@ -305,7 +328,7 @@ tailwind.config = {
               <span class="text-ember-400/70 text-sm font-medium">EVENING</span>
             </div>
             <div>
-              <p class="text-bark-100">Group dinner at <strong class="text-bark-50">High West Saloon</strong> on Main Street. Award-winning craft distillery with a laid-back mountain vibe; perfect for the crew to settle in over whiskey and elevated pub food.</p>
+              <p class="text-bark-100">Group dinner at <strong class="text-bark-50">High West Saloon</strong> on Main Street. Award-winning craft distillery with solid food and a good atmosphere for a big group.</p>
             </div>
           </div>
           <div class="flex gap-4 items-start">
@@ -313,7 +336,7 @@ tailwind.config = {
               <span class="text-ember-400/70 text-sm font-medium">NIGHT</span>
             </div>
             <div>
-              <p class="text-bark-100">Bar hop Main Street. Start at <strong class="text-bark-50">No Name Saloon</strong> (iconic dive, the bar that made Park City famous), then <strong class="text-bark-50">The Cabin</strong> (live music, cocktails), and finish at <strong class="text-bark-50">Star Bar</strong> (sleek lounge).</p>
+              <p class="text-bark-100">Hit Main Street. <strong class="text-bark-50">No Name Saloon</strong> (local institution), <strong class="text-bark-50">The Cabin</strong> (live music, cocktails), <strong class="text-bark-50">Star Bar</strong> (lounge vibe).</p>
             </div>
           </div>
         </div>
@@ -325,8 +348,8 @@ tailwind.config = {
       <div class="flex flex-col md:flex-row md:items-start gap-4 md:gap-8">
         <div class="flex-shrink-0 md:w-48">
           <span class="font-display text-4xl md:text-5xl text-pine-400">DAY 02</span>
-          <p class="text-bark-400 text-sm mt-1">Thu, Aug 21</p>
-          <p class="text-bark-300 font-medium mt-1">Mountain Biking Day</p>
+          <p class="text-bark-400 text-sm mt-1">Fri, Aug 21</p>
+          <p class="text-bark-300 font-medium mt-1">Mountain Biking</p>
         </div>
         <div class="flex-1 space-y-4">
           <div class="flex gap-4 items-start">
@@ -334,7 +357,7 @@ tailwind.config = {
               <span class="text-pine-400/70 text-sm font-medium">MORNING</span>
             </div>
             <div>
-              <p class="text-bark-100">Guided mountain biking with <strong class="text-bark-50">All Seasons Adventures</strong>. Full-suspension bikes, helmets, water, and snacks included. 2-3 hours of riding across Park City's 450+ miles of world-class trail (IMBA Gold-Level Ride Center). Routes for all skill levels.</p>
+              <p class="text-bark-100">Guided mountain biking with <strong class="text-bark-50">All Seasons Adventures</strong>. Full-suspension bikes, helmets, water, and snacks included. 2-3 hours across Park City's 450+ miles of trail (IMBA Gold-Level Ride Center). Routes for all levels.</p>
               <p class="text-bark-400 text-sm mt-1">~$145/person</p>
             </div>
           </div>
@@ -343,7 +366,7 @@ tailwind.config = {
               <span class="text-pine-400/70 text-sm font-medium">AFTERNOON</span>
             </div>
             <div>
-              <p class="text-bark-100">Recovery beers at <strong class="text-bark-50">Wasatch Brew Pub</strong>. Then back to the house for pool, yard games, and general decompression.</p>
+              <p class="text-bark-100">Post-ride beers at <strong class="text-bark-50">Wasatch Brew Pub</strong>, then back to the house to hang out.</p>
             </div>
           </div>
           <div class="flex gap-4 items-start">
@@ -351,7 +374,7 @@ tailwind.config = {
               <span class="text-pine-400/70 text-sm font-medium">EVENING</span>
             </div>
             <div>
-              <p class="text-bark-100">Dinner at <strong class="text-bark-50">350 Main</strong>. Upscale American with private party space for groups of 10+. Contemporary menu with mountain views.</p>
+              <p class="text-bark-100">Dinner at <strong class="text-bark-50">350 Main</strong>. Upscale American, private space for groups of 10+.</p>
             </div>
           </div>
           <div class="flex gap-4 items-start">
@@ -359,7 +382,7 @@ tailwind.config = {
               <span class="text-pine-400/70 text-sm font-medium">NIGHT</span>
             </div>
             <div>
-              <p class="text-bark-100"><strong class="text-bark-50">Velvet Room</strong> for craft cocktails in a swanky lounge setting, then <strong class="text-bark-50">Downstairs</strong> for late-night DJ sets.</p>
+              <p class="text-bark-100"><strong class="text-bark-50">Velvet Room</strong> for cocktails, then <strong class="text-bark-50">Downstairs</strong> for late-night DJ sets.</p>
             </div>
           </div>
         </div>
@@ -371,8 +394,8 @@ tailwind.config = {
       <div class="flex flex-col md:flex-row md:items-start gap-4 md:gap-8">
         <div class="flex-shrink-0 md:w-48">
           <span class="font-display text-4xl md:text-5xl text-bark-300">DAY 03</span>
-          <p class="text-bark-400 text-sm mt-1">Fri, Aug 22</p>
-          <p class="text-bark-300 font-medium mt-1">Adventure Day &amp; Big Night</p>
+          <p class="text-bark-400 text-sm mt-1">Sat, Aug 22</p>
+          <p class="text-bark-300 font-medium mt-1">Adventure Day</p>
         </div>
         <div class="flex-1 space-y-4">
           <div class="flex gap-4 items-start">
@@ -380,7 +403,7 @@ tailwind.config = {
               <span class="text-bark-300/70 text-sm font-medium">MORNING</span>
             </div>
             <div>
-              <p class="text-bark-100"><strong class="text-bark-50">Utah Olympic Park</strong>. Ride the real Olympic bobsled track (5 G's of force) and hit the zip line at up to 50 mph. Watch future Olympians train between runs.</p>
+              <p class="text-bark-100"><strong class="text-bark-50">Utah Olympic Park</strong>. Bobsled ride on the real Olympic track and zip line at up to 50 mph.</p>
             </div>
           </div>
           <div class="flex gap-4 items-start">
@@ -388,7 +411,7 @@ tailwind.config = {
               <span class="text-bark-300/70 text-sm font-medium">AFTERNOON</span>
             </div>
             <div>
-              <p class="text-bark-100">Hike <strong class="text-bark-50">Lost Prospector Trail</strong> (6 miles of flowing singletrack above Old Town, scenic and moderate) or the legendary <strong class="text-bark-50">Wasatch Crest Trail</strong> for more ambitious hikers (10,000 ft elevation, panoramic views).</p>
+              <p class="text-bark-100">Hike <strong class="text-bark-50">Lost Prospector Trail</strong> (6 miles, scenic, moderate) or <strong class="text-bark-50">Wasatch Crest Trail</strong> for a more challenging option at 10,000 ft with panoramic views.</p>
             </div>
           </div>
           <div class="flex gap-4 items-start">
@@ -396,7 +419,7 @@ tailwind.config = {
               <span class="text-bark-300/70 text-sm font-medium">EVENING</span>
             </div>
             <div>
-              <p class="text-bark-100">The big dinner at <strong class="text-bark-50">Prime Steak House &amp; Piano Bar</strong>. Wagyu, filet, live piano. Handles groups of 10. This is the main event dinner.</p>
+              <p class="text-bark-100">Steak dinner at <strong class="text-bark-50">Prime Steak House &amp; Piano Bar</strong>. Wagyu, filet, live piano. Accommodates groups of 10.</p>
               <p class="text-bark-400 text-sm mt-1">Reservations: (435) 655-9739</p>
             </div>
           </div>
@@ -405,7 +428,7 @@ tailwind.config = {
               <span class="text-bark-300/70 text-sm font-medium">NIGHT</span>
             </div>
             <div>
-              <p class="text-bark-100">Full Main Street bar crawl. <strong class="text-bark-50">O'Shucks</strong> (dive bar warm-up) &#8594; <strong class="text-bark-50">No Name Saloon</strong> (round two) &#8594; <strong class="text-bark-50">The Spur</strong> (dancing) &#8594; <strong class="text-bark-50">Park City Social Aid &amp; Pleasure Club</strong> (craft cocktails, close it out).</p>
+              <p class="text-bark-100">Main Street. <strong class="text-bark-50">O'Shucks</strong> &#8594; <strong class="text-bark-50">No Name Saloon</strong> &#8594; <strong class="text-bark-50">The Spur</strong> &#8594; <strong class="text-bark-50">Park City Social Aid &amp; Pleasure Club</strong>.</p>
             </div>
           </div>
         </div>
@@ -417,8 +440,8 @@ tailwind.config = {
       <div class="flex flex-col md:flex-row md:items-start gap-4 md:gap-8">
         <div class="flex-shrink-0 md:w-48">
           <span class="font-display text-4xl md:text-5xl text-summit-400">DAY 04</span>
-          <p class="text-bark-400 text-sm mt-1">Sat, Aug 23</p>
-          <p class="text-bark-300 font-medium mt-1">Send-off</p>
+          <p class="text-bark-400 text-sm mt-1">Sun, Aug 23</p>
+          <p class="text-bark-300 font-medium mt-1">Departure</p>
         </div>
         <div class="flex-1 space-y-4">
           <div class="flex gap-4 items-start">
@@ -426,7 +449,7 @@ tailwind.config = {
               <span class="text-summit-400/70 text-sm font-medium">MORNING</span>
             </div>
             <div>
-              <p class="text-bark-100">Brunch at <strong class="text-bark-50">Riverhorse on Main</strong>. 16-time Forbes Travel Guide Four-Star Award recipient. Contemporary American with mountain views and live jazz. A proper send-off.</p>
+              <p class="text-bark-100">Brunch at <strong class="text-bark-50">Riverhorse on Main</strong>. 16-time Forbes Four-Star recipient, contemporary American with mountain views.</p>
             </div>
           </div>
           <div class="flex gap-4 items-start">
@@ -434,7 +457,7 @@ tailwind.config = {
               <span class="text-summit-400/70 text-sm font-medium">LATE AM</span>
             </div>
             <div>
-              <p class="text-bark-100">Pack up, say your goodbyes, and head to SLC airport (35 min). Or stay another night if you're not ready to face reality.</p>
+              <p class="text-bark-100">Pack up and head to SLC airport (35 min).</p>
             </div>
           </div>
         </div>
@@ -443,8 +466,19 @@ tailwind.config = {
   </div>
 </section>
 
+<!-- THE CREW -->
+<section id="crew" class="py-24 md:py-32 px-6 bg-gradient-to-b from-bark-950 via-bark-900/80 to-bark-950 relative">
+  <div class="max-w-5xl mx-auto">
+    <div data-reveal class="mb-16">
+      <p class="text-ember-400 text-sm tracking-[0.3em] uppercase mb-3">Who's Going</p>
+      <h2 class="font-display text-5xl md:text-7xl text-bark-50 tracking-wide">THE CREW</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8" id="crewGrid"></div>
+  </div>
+</section>
+
 <!-- LOGISTICS -->
-<section id="logistics" class="py-24 md:py-32 px-6 bg-gradient-to-b from-bark-950 via-bark-900/80 to-bark-950 relative">
+<section id="logistics" class="py-24 md:py-32 px-6 bg-bark-950 relative">
   <div class="max-w-5xl mx-auto">
     <div data-reveal class="mb-16">
       <p class="text-ember-400 text-sm tracking-[0.3em] uppercase mb-3">Know Before You Go</p>
@@ -452,51 +486,46 @@ tailwind.config = {
     </div>
 
     <div class="grid md:grid-cols-2 gap-6">
-      <!-- Flights -->
       <div data-reveal class="bg-bark-900/60 border border-summit-800/30 rounded-lg p-6">
         <div class="flex items-center gap-3 mb-4">
           <svg class="w-6 h-6 text-ember-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"/></svg>
           <h3 class="font-display text-2xl text-bark-50 tracking-wide">FLIGHTS</h3>
         </div>
         <p class="text-bark-300 mb-2">Fly into <strong class="text-bark-100">Salt Lake City International (SLC)</strong>.</p>
-        <p class="text-bark-300">Park City is just 35 minutes east on I-80. Book early for the best rates; SLC is a Delta hub with plenty of direct routes.</p>
+        <p class="text-bark-300">Park City is 35 minutes east on I-80. SLC is a Delta hub with plenty of direct routes.</p>
       </div>
 
-      <!-- Lodging -->
       <div data-reveal class="bg-bark-900/60 border border-summit-800/30 rounded-lg p-6">
         <div class="flex items-center gap-3 mb-4">
           <svg class="w-6 h-6 text-ember-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"/></svg>
           <h3 class="font-display text-2xl text-bark-50 tracking-wide">LODGING</h3>
         </div>
-        <p class="text-bark-300 mb-3">We've got the house booked. Check out the listing:</p>
+        <p class="text-bark-300 mb-3">House is booked. Check out the listing:</p>
         <a href="https://www.airbnb.com/rooms/44552013" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-ember-500/15 border border-ember-500/30 text-ember-400 hover:text-ember-500 hover:bg-ember-500/25 px-4 py-2 rounded transition-all text-sm font-medium">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
           View the Airbnb Listing
         </a>
       </div>
 
-      <!-- Getting Around -->
       <div data-reveal class="bg-bark-900/60 border border-summit-800/30 rounded-lg p-6">
         <div class="flex items-center gap-3 mb-4">
           <svg class="w-6 h-6 text-ember-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0H21M3.375 14.25h17.25m0 0V6.169a2.25 2.25 0 00-.659-1.591l-2.67-2.67a2.25 2.25 0 00-1.59-.658H5.625A2.25 2.25 0 003.375 3.5v10.75"/></svg>
           <h3 class="font-display text-2xl text-bark-50 tracking-wide">GETTING AROUND</h3>
         </div>
-        <p class="text-bark-300 mb-2">Park City has <strong class="text-bark-100">free public transit</strong> (bus system) that covers the whole town. Main Street is walkable from most rentals.</p>
-        <p class="text-bark-300">For airport transfers and activity shuttles, we'll coordinate rideshares. Uber/Lyft works but can be slow; schedule rides in advance when possible.</p>
+        <p class="text-bark-300 mb-2">Park City has <strong class="text-bark-100">free public transit</strong> covering the whole town. Main Street is walkable from most rentals.</p>
+        <p class="text-bark-300">For airport transfers, we'll coordinate rideshares. Uber/Lyft works but can be slow; schedule rides in advance when possible.</p>
       </div>
 
-      <!-- Weather & Elevation -->
       <div data-reveal class="bg-bark-900/60 border border-summit-800/30 rounded-lg p-6">
         <div class="flex items-center gap-3 mb-4">
           <svg class="w-6 h-6 text-ember-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-10.233 2.33A4.502 4.502 0 002.25 15z"/></svg>
           <h3 class="font-display text-2xl text-bark-50 tracking-wide">WEATHER &amp; ELEVATION</h3>
         </div>
-        <p class="text-bark-300 mb-2">Park City sits at <strong class="text-bark-100">7,000 ft</strong> elevation (trails go up to 10,000 ft). Late August brings warm days (<strong class="text-bark-100">70-85&deg;F</strong>) and cool nights (<strong class="text-bark-100">45-55&deg;F</strong>).</p>
-        <p class="text-bark-300">Hydrate aggressively. The altitude is real, especially if you're coming from sea level. Drink water before you drink beer.</p>
+        <p class="text-bark-300 mb-2">Park City sits at <strong class="text-bark-100">7,000 ft</strong> (trails up to 10,000 ft). Late August: <strong class="text-bark-100">70-85&deg;F</strong> days, <strong class="text-bark-100">45-55&deg;F</strong> nights.</p>
+        <p class="text-bark-300">Hydrate well, especially if you're coming from sea level. The altitude is no joke.</p>
       </div>
     </div>
 
-    <!-- Map Embed -->
     <div data-reveal class="mt-8 rounded-lg overflow-hidden border border-summit-800/30 h-64 md:h-80">
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48736.36447854994!2d-111.52089437363053!3d40.65888082814903!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87520f632c9ebc6f%3A0x7ab516e977b50f82!2sPark%20City%2C%20UT!5e0!3m2!1sen!2sus!4v1710000000000!5m2!1sen!2sus"
@@ -508,27 +537,24 @@ tailwind.config = {
 </section>
 
 <!-- PACKING LIST -->
-<section id="packing" class="py-24 md:py-32 px-6 bg-bark-950 relative">
+<section id="packing" class="py-24 md:py-32 px-6 bg-gradient-to-b from-bark-950 via-bark-900/80 to-bark-950 relative">
   <div class="max-w-5xl mx-auto">
     <div data-reveal class="mb-16">
-      <p class="text-ember-400 text-sm tracking-[0.3em] uppercase mb-3">Don't Forget</p>
+      <p class="text-ember-400 text-sm tracking-[0.3em] uppercase mb-3">What to Bring</p>
       <h2 class="font-display text-5xl md:text-7xl text-bark-50 tracking-wide">PACKING LIST</h2>
       <p class="text-bark-400 mt-3">Check items off as you pack. Your progress saves automatically.</p>
     </div>
-
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="packingGrid">
-      <!-- Columns injected by JS -->
-    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="packingGrid"></div>
   </div>
 </section>
 
 <!-- COSTS -->
-<section id="costs" class="py-24 md:py-32 px-6 bg-gradient-to-b from-bark-950 via-bark-900/80 to-bark-950 relative">
+<section id="costs" class="py-24 md:py-32 px-6 bg-bark-950 relative">
   <div class="max-w-4xl mx-auto">
     <div data-reveal class="mb-16">
-      <p class="text-ember-400 text-sm tracking-[0.3em] uppercase mb-3">The Damage</p>
-      <h2 class="font-display text-5xl md:text-7xl text-bark-50 tracking-wide">COST ESTIMATE</h2>
-      <p class="text-bark-400 mt-3">Per-person estimates based on 10 guys splitting everything. Actual totals may vary.</p>
+      <p class="text-ember-400 text-sm tracking-[0.3em] uppercase mb-3">Estimated Costs</p>
+      <h2 class="font-display text-5xl md:text-7xl text-bark-50 tracking-wide">COST BREAKDOWN</h2>
+      <p class="text-bark-400 mt-3">Per-person estimates based on 10 people splitting evenly. Actuals may vary.</p>
     </div>
 
     <div data-reveal class="bg-bark-900/60 border border-summit-800/30 rounded-lg overflow-hidden">
@@ -537,9 +563,7 @@ tailwind.config = {
         <span class="text-right">Est. Total</span>
         <span class="text-right">Per Person</span>
       </div>
-      <div id="costTable">
-        <!-- Rows injected by JS -->
-      </div>
+      <div id="costTable"></div>
       <div class="grid grid-cols-3 px-6 py-5 border-t-2 border-ember-500/50 bg-bark-900/80">
         <span class="font-display text-xl text-bark-50 tracking-wide">TOTAL</span>
         <span id="costTotal" class="text-right font-display text-xl text-ember-400"></span>
@@ -559,87 +583,16 @@ tailwind.config = {
   </div>
 </section>
 
-<!-- RSVP -->
-<section id="rsvp" class="py-24 md:py-32 px-6 bg-bark-950 relative">
-  <div class="max-w-3xl mx-auto text-center">
-    <div data-reveal class="mb-12">
-      <p class="text-ember-400 text-sm tracking-[0.3em] uppercase mb-3">Lock It In</p>
-      <h2 class="font-display text-5xl md:text-7xl text-bark-50 tracking-wide">RSVP</h2>
-      <p class="text-bark-400 mt-3 max-w-xl mx-auto">Let us know you're coming so we can book the right house, reserve the right tables, and plan the right amount of chaos.</p>
-    </div>
-
-    <div data-reveal class="bg-bark-900/60 border border-summit-800/30 rounded-lg p-8 text-left">
-      <form id="rsvpForm" class="space-y-6">
-        <div>
-          <label class="block text-bark-300 text-sm font-medium mb-2">Your Name</label>
-          <input type="text" required class="w-full bg-bark-950 border border-summit-700/50 rounded px-4 py-3 text-bark-100 placeholder-bark-600 focus:outline-none focus:border-ember-500 transition-colors" placeholder="First and last" />
-        </div>
-        <div class="grid sm:grid-cols-2 gap-6">
-          <div>
-            <label class="block text-bark-300 text-sm font-medium mb-2">Are you in?</label>
-            <select required class="w-full bg-bark-950 border border-summit-700/50 rounded px-4 py-3 text-bark-100 focus:outline-none focus:border-ember-500 transition-colors">
-              <option value="">Select</option>
-              <option value="yes">Hell yes</option>
-              <option value="maybe">Maybe (let me check)</option>
-              <option value="no">Can't make it</option>
-            </select>
-          </div>
-          <div>
-            <label class="block text-bark-300 text-sm font-medium mb-2">Arrival Date</label>
-            <select class="w-full bg-bark-950 border border-summit-700/50 rounded px-4 py-3 text-bark-100 focus:outline-none focus:border-ember-500 transition-colors">
-              <option value="">Select</option>
-              <option value="aug19">Tue, Aug 19 (early bird)</option>
-              <option value="aug20">Wed, Aug 20 (Day 1)</option>
-              <option value="aug21">Thu, Aug 21 (Day 2)</option>
-            </select>
-          </div>
-        </div>
-        <div class="grid sm:grid-cols-2 gap-6">
-          <div>
-            <label class="block text-bark-300 text-sm font-medium mb-2">Departure Date</label>
-            <select class="w-full bg-bark-950 border border-summit-700/50 rounded px-4 py-3 text-bark-100 focus:outline-none focus:border-ember-500 transition-colors">
-              <option value="">Select</option>
-              <option value="aug23">Sat, Aug 23 (Day 4)</option>
-              <option value="aug24">Sun, Aug 24 (staying extra)</option>
-            </select>
-          </div>
-          <div>
-            <label class="block text-bark-300 text-sm font-medium mb-2">Mountain Biking Skill</label>
-            <select class="w-full bg-bark-950 border border-summit-700/50 rounded px-4 py-3 text-bark-100 focus:outline-none focus:border-ember-500 transition-colors">
-              <option value="">Select</option>
-              <option value="beginner">Beginner (keep it chill)</option>
-              <option value="intermediate">Intermediate (let's ride)</option>
-              <option value="advanced">Advanced (send it)</option>
-            </select>
-          </div>
-        </div>
-        <div>
-          <label class="block text-bark-300 text-sm font-medium mb-2">Dietary Restrictions / Anything Else</label>
-          <textarea rows="3" class="w-full bg-bark-950 border border-summit-700/50 rounded px-4 py-3 text-bark-100 placeholder-bark-600 focus:outline-none focus:border-ember-500 transition-colors" placeholder="Allergies, dietary needs, activity preferences, etc."></textarea>
-        </div>
-        <button type="submit" class="w-full bg-ember-500 hover:bg-ember-600 text-bark-950 font-semibold py-3 rounded transition-colors text-sm tracking-wider uppercase">
-          Submit RSVP
-        </button>
-      </form>
-      <div id="rsvpSuccess" class="hidden text-center py-12">
-        <svg class="w-16 h-16 text-ember-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        <h3 class="font-display text-3xl text-bark-50 tracking-wide mb-2">YOU'RE LOCKED IN</h3>
-        <p class="text-bark-300">See you in Park City. Don't forget to send your Venmo.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- FOOTER -->
 <footer class="py-12 px-6 border-t border-summit-800/20">
   <div class="max-w-5xl mx-auto text-center">
     <p class="font-display text-3xl text-bark-50 tracking-wider mb-2">PARK CITY '26</p>
-    <p class="text-bark-500 text-sm">Four days. Ten guys. One last ride before the ring.</p>
+    <p class="text-bark-500 text-sm">Aug 20-23. Park City, Utah.</p>
   </div>
 </footer>
 
 <script>
-// Countdown timer
+// Countdown
 function updateCountdown() {
   const target = new Date('2026-08-20T12:00:00-06:00');
   const now = new Date();
@@ -682,9 +635,7 @@ document.getElementById('mobileMenuBtn').addEventListener('click', () => {
   document.getElementById('mobileMenu').classList.toggle('hidden');
 });
 document.querySelectorAll('.mobile-nav').forEach(link => {
-  link.addEventListener('click', () => {
-    document.getElementById('mobileMenu').classList.add('hidden');
-  });
+  link.addEventListener('click', () => document.getElementById('mobileMenu').classList.add('hidden'));
 });
 
 // Active nav highlighting
@@ -715,7 +666,61 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
 
-// Packing list data
+// ============================================================
+// CREW DATA
+// For photos: place images in a "photos" folder next to this
+// file, then set photo to e.g. "photos/name.jpg"
+// ============================================================
+const crew = [
+  { name: 'The Groom', role: 'groom', photo: null, location: 'New York, NY', description: 'The man of the hour. Somehow convinced someone to marry him.' },
+  { name: 'Best Man', role: 'best-man', photo: null, location: 'Los Angeles, CA', description: 'Planned this whole thing. If anything goes wrong, blame him.' },
+  { name: 'Guy #3', role: null, photo: null, location: 'Chicago, IL', description: 'Replace with name and description.' },
+  { name: 'Guy #4', role: null, photo: null, location: 'Austin, TX', description: 'Replace with name and description.' },
+  { name: 'Guy #5', role: null, photo: null, location: 'Denver, CO', description: 'Replace with name and description.' },
+  { name: 'Guy #6', role: null, photo: null, location: 'San Francisco, CA', description: 'Replace with name and description.' },
+  { name: 'Guy #7', role: null, photo: null, location: 'Nashville, TN', description: 'Replace with name and description.' },
+  { name: 'Guy #8', role: null, photo: null, location: 'Miami, FL', description: 'Replace with name and description.' },
+  { name: 'Guy #9', role: null, photo: null, location: 'Boston, MA', description: 'Replace with name and description.' },
+  { name: 'Guy #10', role: null, photo: null, location: 'Seattle, WA', description: 'Replace with name and description.' },
+];
+
+const crewGrid = document.getElementById('crewGrid');
+crew.forEach((member, i) => {
+  const card = document.createElement('div');
+  card.setAttribute('data-reveal', '');
+  card.style.transitionDelay = `${i * 0.08}s`;
+
+  const badgeHTML = member.role === 'groom'
+    ? '<span class="groom-badge absolute top-4 right-4 text-xs font-bold tracking-wider uppercase px-3 py-1 rounded z-10">The Groom</span>'
+    : member.role === 'best-man'
+    ? '<span class="absolute top-4 right-4 bg-bark-50/10 backdrop-blur text-bark-50 text-xs font-bold tracking-wider uppercase px-3 py-1 rounded border border-bark-50/20 z-10">Best Man</span>'
+    : '';
+
+  const photoHTML = member.photo
+    ? `<img src="${member.photo}" alt="${member.name}" class="crew-photo w-full h-full object-cover" />`
+    : `<div class="crew-photo photo-placeholder w-full h-full"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg></div>`;
+
+  card.className = 'crew-card bg-bark-900/60 border border-summit-800/30 rounded-lg overflow-hidden';
+  card.innerHTML = `
+    <div class="relative aspect-[4/3] overflow-hidden">
+      ${badgeHTML}
+      ${photoHTML}
+      <div class="absolute inset-0 bg-gradient-to-t from-bark-950/80 via-transparent to-transparent"></div>
+    </div>
+    <div class="p-6">
+      <h3 class="font-display text-3xl text-bark-50 tracking-wide mb-1">${member.name.toUpperCase()}</h3>
+      ${member.location ? `<p class="flex items-center gap-1.5 text-bark-400 text-xs mb-3"><svg class="w-3.5 h-3.5 text-ember-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>${member.location}</p>` : ''}
+      <p class="text-bark-300 text-sm leading-relaxed">${member.description}</p>
+    </div>
+  `;
+  crewGrid.appendChild(card);
+});
+
+setTimeout(() => {
+  document.querySelectorAll('#crewGrid [data-reveal]').forEach(el => observer.observe(el));
+}, 50);
+
+// Packing list
 const packingData = {
   'Outdoor Gear': [
     'Mountain biking shorts / athletic wear',
@@ -755,14 +760,11 @@ const packingData = {
     'Flip flops / slides',
     'Playing cards / poker chips',
     'Bluetooth speaker (portable)',
-    'Costumes / bachelor party gear',
   ],
 };
 
-// Render packing list
 const packingGrid = document.getElementById('packingGrid');
 const savedChecks = JSON.parse(localStorage.getItem('pc-packing') || '{}');
-
 Object.entries(packingData).forEach(([category, items]) => {
   const col = document.createElement('div');
   col.setAttribute('data-reveal', '');
@@ -793,20 +795,19 @@ Object.entries(packingData).forEach(([category, items]) => {
   col.appendChild(list);
   packingGrid.appendChild(col);
 });
-
 setTimeout(() => {
   document.querySelectorAll('#packingGrid [data-reveal]').forEach(el => observer.observe(el));
 }, 50);
 
-// Cost data
+// Costs
 const costs = [
   { item: 'Lodging (3 nights)', total: 4000, note: 'Large house near Main St' },
   { item: 'Mountain Biking (guided)', total: 1450, note: 'All Seasons Adventures' },
   { item: 'Olympic Park (bobsled + zip)', total: 1500, note: 'Group rate estimate' },
   { item: 'Dinner: High West Saloon', total: 800, note: 'Night 1' },
   { item: 'Dinner: 350 Main', total: 1200, note: 'Night 2' },
-  { item: 'Dinner: Prime Steak House', total: 1800, note: 'Night 3 (the big one)' },
-  { item: 'Brunch: Riverhorse on Main', total: 600, note: 'Day 4 send-off' },
+  { item: 'Dinner: Prime Steak House', total: 1800, note: 'Night 3' },
+  { item: 'Brunch: Riverhorse on Main', total: 600, note: 'Day 4' },
   { item: 'Bar Budget (3 nights)', total: 2000, note: 'Estimated across all nights' },
   { item: 'Airport Transfers', total: 400, note: 'Rideshare / rental split' },
 ];
@@ -830,32 +831,10 @@ costs.forEach(c => {
 });
 document.getElementById('costTotal').textContent = `$${grandTotal.toLocaleString()}`;
 document.getElementById('costPerPerson').textContent = `~$${Math.round(grandTotal / 10).toLocaleString()}/person`;
-
-// RSVP form
-document.getElementById('rsvpForm').addEventListener('submit', (e) => {
-  e.preventDefault();
-  const form = e.target;
-  const formData = new FormData(form);
-  document.getElementById('rsvpForm').classList.add('hidden');
-  document.getElementById('rsvpSuccess').classList.remove('hidden');
-
-  // In production, you'd POST this to a Google Form or API endpoint.
-  // For now, we store it locally and show the success state.
-  const rsvpData = {};
-  form.querySelectorAll('input, select, textarea').forEach(el => {
-    if (el.name || el.type !== 'submit') {
-      rsvpData[el.previousElementSibling?.textContent || el.type] = el.value;
-    }
-  });
-  const existing = JSON.parse(localStorage.getItem('pc-rsvps') || '[]');
-  existing.push(rsvpData);
-  localStorage.setItem('pc-rsvps', JSON.stringify(existing));
-});
 </script>
 </div><!-- /siteContent -->
 
 <script>
-// Password gate (SHA-256 hash of the password so it's not plaintext in source)
 const HASH = '692d9a0017dd378ec184b9f80a64ef95e8d8e3ad944407abcaed25545e46a7be';
 async function sha256(str) {
   const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
