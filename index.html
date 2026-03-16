@@ -672,16 +672,13 @@ document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
 // file, then set photo to e.g. "photos/name.jpg"
 // ============================================================
 const crew = [
-  { name: 'The Groom', role: 'groom', photo: null, location: 'New York, NY', description: 'The man of the hour. Somehow convinced someone to marry him.' },
-  { name: 'Best Man', role: 'best-man', photo: null, location: 'Los Angeles, CA', description: 'Planned this whole thing. If anything goes wrong, blame him.' },
-  { name: 'Guy #3', role: null, photo: null, location: 'Chicago, IL', description: 'Replace with name and description.' },
-  { name: 'Guy #4', role: null, photo: null, location: 'Austin, TX', description: 'Replace with name and description.' },
-  { name: 'Guy #5', role: null, photo: null, location: 'Denver, CO', description: 'Replace with name and description.' },
-  { name: 'Guy #6', role: null, photo: null, location: 'San Francisco, CA', description: 'Replace with name and description.' },
-  { name: 'Guy #7', role: null, photo: null, location: 'Nashville, TN', description: 'Replace with name and description.' },
-  { name: 'Guy #8', role: null, photo: null, location: 'Miami, FL', description: 'Replace with name and description.' },
-  { name: 'Guy #9', role: null, photo: null, location: 'Boston, MA', description: 'Replace with name and description.' },
-  { name: 'Guy #10', role: null, photo: null, location: 'Seattle, WA', description: 'Replace with name and description.' },
+  { name: 'Andrew', role: 'groom', photo: null, location: 'New York, NY', description: 'The man of the hour. Somehow convinced someone to put up with him for life.' },
+  { name: 'Peter', role: 'best-man', photo: 'Peter.jpg', location: 'Boise, ID', description: 'Best man and most likely to need a trip to Park City Medical Center. Rumor has it he has a frequent flyer card.' },
+  { name: 'Quinn', role: null, photo: 'Quinn.jpg', location: 'Los Angeles, CA', description: 'The loudest person at every table, every bar, and every chairlift. Also the only dad in the group, so expect unsolicited life advice by midnight.' },
+  { name: 'Jerry', role: null, photo: 'Jerry.jpg', location: 'Florida', description: 'Will find a way to bring up how great Florida is within five minutes of every conversation. Every. Single. One.' },
+  { name: 'Sean', role: null, photo: 'Sean.jpg', location: 'Chicago, IL', description: 'Statistically guaranteed to slip his number to at least one waitress per night. The over/under is 1.5.' },
+  { name: 'Rick', role: null, photo: 'Rick.jpg', location: 'New York, NY', description: 'Three drinks in and he will corner you for a passionate monologue about cats, insurance, or ideally both at the same time.' },
+  { name: 'Matt', role: null, photo: 'Matt.jpg', location: 'New York, NY', description: 'Will absolutely blow his banking bonus on a pair of cowboy boots and a hat he will never wear again after Sunday.' },
 ];
 
 const crewGrid = document.getElementById('crewGrid');
