@@ -158,10 +158,6 @@ tailwind.config = {
     transform: rotate(45deg);
   }
 
-  .cost-row:nth-child(even) {
-    background: rgba(255,255,255,0.02);
-  }
-
   .crew-card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
@@ -234,7 +230,6 @@ tailwind.config = {
       <a href="#crew" class="nav-link hover:text-ember-400">The Crew</a>
       <a href="#logistics" class="nav-link hover:text-ember-400">Logistics</a>
       <a href="#packing" class="nav-link hover:text-ember-400">Packing</a>
-      <a href="#costs" class="nav-link hover:text-ember-400">Costs</a>
     </div>
     <button id="mobileMenuBtn" class="md:hidden text-bark-200 hover:text-ember-400 transition-colors">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -246,7 +241,6 @@ tailwind.config = {
       <a href="#crew" class="mobile-nav hover:text-ember-400">The Crew</a>
       <a href="#logistics" class="mobile-nav hover:text-ember-400">Logistics</a>
       <a href="#packing" class="mobile-nav hover:text-ember-400">Packing</a>
-      <a href="#costs" class="mobile-nav hover:text-ember-400">Costs</a>
     </div>
   </div>
 </nav>
@@ -312,23 +306,15 @@ tailwind.config = {
         <div class="flex-shrink-0 md:w-48">
           <span class="font-display text-4xl md:text-5xl text-ember-400">DAY 01</span>
           <p class="text-bark-400 text-sm mt-1">Thu, Aug 20</p>
-          <p class="text-bark-300 font-medium mt-1">Arrival &amp; First Night</p>
+          <p class="text-bark-300 font-medium mt-1">Arrival</p>
         </div>
         <div class="flex-1 space-y-4">
-          <div class="flex gap-4 items-start">
-            <div class="flex-shrink-0 w-20 text-right">
-              <span class="text-ember-400/70 text-sm font-medium">AFTERNOON</span>
-            </div>
-            <div>
-              <p class="text-bark-100">Arrive in Park City via SLC (35 min drive). Check into the house and get settled in.</p>
-            </div>
-          </div>
           <div class="flex gap-4 items-start">
             <div class="flex-shrink-0 w-20 text-right">
               <span class="text-ember-400/70 text-sm font-medium">EVENING</span>
             </div>
             <div>
-              <p class="text-bark-100">Group dinner at <strong class="text-bark-50">High West Saloon</strong> on Main Street. Award-winning craft distillery with solid food and a good atmosphere for a big group.</p>
+              <p class="text-bark-100">Arrive in Park City via SLC (35 min Uber). Check into the house and get settled in.</p>
             </div>
           </div>
           <div class="flex gap-4 items-start">
@@ -336,7 +322,7 @@ tailwind.config = {
               <span class="text-ember-400/70 text-sm font-medium">NIGHT</span>
             </div>
             <div>
-              <p class="text-bark-100">Hit Main Street. <strong class="text-bark-50">No Name Saloon</strong> (local institution), <strong class="text-bark-50">The Cabin</strong> (live music, cocktails), <strong class="text-bark-50">Star Bar</strong> (lounge vibe).</p>
+              <p class="text-bark-100">Chill dinner at the house (order in) or grab something quick nearby. Low-key first night to regroup before the weekend kicks off.</p>
             </div>
           </div>
         </div>
@@ -349,7 +335,7 @@ tailwind.config = {
         <div class="flex-shrink-0 md:w-48">
           <span class="font-display text-4xl md:text-5xl text-pine-400">DAY 02</span>
           <p class="text-bark-400 text-sm mt-1">Fri, Aug 21</p>
-          <p class="text-bark-300 font-medium mt-1">Mountain Biking</p>
+          <p class="text-bark-300 font-medium mt-1">Hiking &amp; Main Street</p>
         </div>
         <div class="flex-1 space-y-4">
           <div class="flex gap-4 items-start">
@@ -357,8 +343,7 @@ tailwind.config = {
               <span class="text-pine-400/70 text-sm font-medium">MORNING</span>
             </div>
             <div>
-              <p class="text-bark-100">Guided mountain biking with <strong class="text-bark-50">All Seasons Adventures</strong>. Full-suspension bikes, helmets, water, and snacks included. 2-3 hours across Park City's 450+ miles of trail (IMBA Gold-Level Ride Center). Routes for all levels.</p>
-              <p class="text-bark-400 text-sm mt-1">~$145/person</p>
+              <p class="text-bark-100">For those who can take the day off: morning hike. Park City has 450+ miles of trail with options for all levels.</p>
             </div>
           </div>
           <div class="flex gap-4 items-start">
@@ -366,7 +351,7 @@ tailwind.config = {
               <span class="text-pine-400/70 text-sm font-medium">AFTERNOON</span>
             </div>
             <div>
-              <p class="text-bark-100">Post-ride beers at <strong class="text-bark-50">Wasatch Brew Pub</strong>, then back to the house to hang out.</p>
+              <p class="text-bark-100">Bar hop on Main Street. Plenty of spots to post up, grab beers, and take it easy before dinner.</p>
             </div>
           </div>
           <div class="flex gap-4 items-start">
@@ -374,7 +359,7 @@ tailwind.config = {
               <span class="text-pine-400/70 text-sm font-medium">EVENING</span>
             </div>
             <div>
-              <p class="text-bark-100">Dinner at <strong class="text-bark-50">350 Main</strong>. Upscale American, private space for groups of 10+.</p>
+              <p class="text-bark-100">Dinner in town.</p>
             </div>
           </div>
           <div class="flex gap-4 items-start">
@@ -382,7 +367,7 @@ tailwind.config = {
               <span class="text-pine-400/70 text-sm font-medium">NIGHT</span>
             </div>
             <div>
-              <p class="text-bark-100"><strong class="text-bark-50">Velvet Room</strong> for cocktails, then <strong class="text-bark-50">Downstairs</strong> for late-night DJ sets.</p>
+              <p class="text-bark-100">Friday night bar hop on Main Street.</p>
             </div>
           </div>
         </div>
@@ -395,7 +380,7 @@ tailwind.config = {
         <div class="flex-shrink-0 md:w-48">
           <span class="font-display text-4xl md:text-5xl text-bark-300">DAY 03</span>
           <p class="text-bark-400 text-sm mt-1">Sat, Aug 22</p>
-          <p class="text-bark-300 font-medium mt-1">Adventure Day</p>
+          <p class="text-bark-300 font-medium mt-1">Mountain Biking</p>
         </div>
         <div class="flex-1 space-y-4">
           <div class="flex gap-4 items-start">
@@ -403,15 +388,7 @@ tailwind.config = {
               <span class="text-bark-300/70 text-sm font-medium">MORNING</span>
             </div>
             <div>
-              <p class="text-bark-100"><strong class="text-bark-50">Utah Olympic Park</strong>. Bobsled ride on the real Olympic track and zip line at up to 50 mph.</p>
-            </div>
-          </div>
-          <div class="flex gap-4 items-start">
-            <div class="flex-shrink-0 w-20 text-right">
-              <span class="text-bark-300/70 text-sm font-medium">AFTERNOON</span>
-            </div>
-            <div>
-              <p class="text-bark-100">Hike <strong class="text-bark-50">Lost Prospector Trail</strong> (6 miles, scenic, moderate) or <strong class="text-bark-50">Wasatch Crest Trail</strong> for a more challenging option at 10,000 ft with panoramic views.</p>
+              <p class="text-bark-100">Mountain biking. Park City is an IMBA Gold-Level Ride Center with routes for all levels. Details on rentals and guides TBD.</p>
             </div>
           </div>
           <div class="flex gap-4 items-start">
@@ -419,16 +396,7 @@ tailwind.config = {
               <span class="text-bark-300/70 text-sm font-medium">EVENING</span>
             </div>
             <div>
-              <p class="text-bark-100">Steak dinner at <strong class="text-bark-50">Prime Steak House &amp; Piano Bar</strong>. Wagyu, filet, live piano. Accommodates groups of 10.</p>
-              <p class="text-bark-400 text-sm mt-1">Reservations: (435) 655-9739</p>
-            </div>
-          </div>
-          <div class="flex gap-4 items-start">
-            <div class="flex-shrink-0 w-20 text-right">
-              <span class="text-bark-300/70 text-sm font-medium">NIGHT</span>
-            </div>
-            <div>
-              <p class="text-bark-100">Main Street. <strong class="text-bark-50">O'Shucks</strong> &#8594; <strong class="text-bark-50">No Name Saloon</strong> &#8594; <strong class="text-bark-50">The Spur</strong> &#8594; <strong class="text-bark-50">Park City Social Aid &amp; Pleasure Club</strong>.</p>
+              <p class="text-bark-100">Dinner in town.</p>
             </div>
           </div>
         </div>
@@ -449,15 +417,7 @@ tailwind.config = {
               <span class="text-summit-400/70 text-sm font-medium">MORNING</span>
             </div>
             <div>
-              <p class="text-bark-100">Brunch at <strong class="text-bark-50">Riverhorse on Main</strong>. 16-time Forbes Four-Star recipient, contemporary American with mountain views.</p>
-            </div>
-          </div>
-          <div class="flex gap-4 items-start">
-            <div class="flex-shrink-0 w-20 text-right">
-              <span class="text-summit-400/70 text-sm font-medium">LATE AM</span>
-            </div>
-            <div>
-              <p class="text-bark-100">Pack up and head to SLC airport (35 min).</p>
+              <p class="text-bark-100">Pack up and head to SLC airport (35 min Uber).</p>
             </div>
           </div>
         </div>
@@ -510,10 +470,10 @@ tailwind.config = {
       <div data-reveal class="bg-bark-900/60 border border-summit-800/30 rounded-lg p-6">
         <div class="flex items-center gap-3 mb-4">
           <svg class="w-6 h-6 text-ember-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0H21M3.375 14.25h17.25m0 0V6.169a2.25 2.25 0 00-.659-1.591l-2.67-2.67a2.25 2.25 0 00-1.59-.658H5.625A2.25 2.25 0 003.375 3.5v10.75"/></svg>
-          <h3 class="font-display text-2xl text-bark-50 tracking-wide">GETTING AROUND</h3>
+          <h3 class="font-display text-2xl text-bark-50 tracking-wide">GETTING THERE</h3>
         </div>
-        <p class="text-bark-300 mb-2">Park City has <strong class="text-bark-100">free public transit</strong> covering the whole town. Main Street is walkable from most rentals.</p>
-        <p class="text-bark-300">For airport transfers, we'll coordinate rideshares. Uber/Lyft works but can be slow; schedule rides in advance when possible.</p>
+        <p class="text-bark-300 mb-2">Uber from <strong class="text-bark-100">SLC airport to Park City</strong> is about 35 minutes.</p>
+        <p class="text-bark-300">We will aim to carpool from the airport where possible, so coordinate arrival times in the group chat. Once in Park City, Main Street is walkable from the house.</p>
       </div>
 
       <div data-reveal class="bg-bark-900/60 border border-summit-800/30 rounded-lg p-6">
@@ -526,13 +486,6 @@ tailwind.config = {
       </div>
     </div>
 
-    <div data-reveal class="mt-8 rounded-lg overflow-hidden border border-summit-800/30 h-64 md:h-80">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48736.36447854994!2d-111.52089437363053!3d40.65888082814903!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87520f632c9ebc6f%3A0x7ab516e977b50f82!2sPark%20City%2C%20UT!5e0!3m2!1sen!2sus!4v1710000000000!5m2!1sen!2sus"
-        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-        class="grayscale contrast-125 opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
-      ></iframe>
-    </div>
   </div>
 </section>
 
@@ -548,40 +501,6 @@ tailwind.config = {
   </div>
 </section>
 
-<!-- COSTS -->
-<section id="costs" class="py-24 md:py-32 px-6 bg-bark-950 relative">
-  <div class="max-w-4xl mx-auto">
-    <div data-reveal class="mb-16">
-      <p class="text-ember-400 text-sm tracking-[0.3em] uppercase mb-3">Estimated Costs</p>
-      <h2 class="font-display text-5xl md:text-7xl text-bark-50 tracking-wide">COST BREAKDOWN</h2>
-      <p class="text-bark-400 mt-3">Per-person estimates based on 10 people splitting evenly. Actuals may vary.</p>
-    </div>
-
-    <div data-reveal class="bg-bark-900/60 border border-summit-800/30 rounded-lg overflow-hidden">
-      <div class="grid grid-cols-3 text-sm font-semibold text-bark-400 tracking-wider uppercase px-6 py-4 border-b border-summit-800/30">
-        <span>Item</span>
-        <span class="text-right">Est. Total</span>
-        <span class="text-right">Per Person</span>
-      </div>
-      <div id="costTable"></div>
-      <div class="grid grid-cols-3 px-6 py-5 border-t-2 border-ember-500/50 bg-bark-900/80">
-        <span class="font-display text-xl text-bark-50 tracking-wide">TOTAL</span>
-        <span id="costTotal" class="text-right font-display text-xl text-ember-400"></span>
-        <span id="costPerPerson" class="text-right font-display text-xl text-ember-400"></span>
-      </div>
-    </div>
-
-    <div data-reveal class="mt-8 bg-bark-900/60 border border-ember-500/30 rounded-lg p-6 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-      <div class="flex-shrink-0 w-12 h-12 bg-ember-500/20 rounded-full flex items-center justify-center">
-        <svg class="w-6 h-6 text-ember-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-      </div>
-      <div>
-        <p class="text-bark-100 font-semibold mb-1">Payment</p>
-        <p class="text-bark-300">Send your share via <strong class="text-bark-100">Venmo</strong> to <strong class="text-ember-400">@YourVenmoHandle</strong> (or Zelle/PayPal). Please send before Aug 10 so we can lock in reservations.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- FOOTER -->
 <footer class="py-12 px-6 border-t border-summit-800/20">
@@ -796,38 +715,6 @@ setTimeout(() => {
   document.querySelectorAll('#packingGrid [data-reveal]').forEach(el => observer.observe(el));
 }, 50);
 
-// Costs
-const costs = [
-  { item: 'Lodging (3 nights)', total: 4000, note: 'Large house near Main St' },
-  { item: 'Mountain Biking (guided)', total: 1450, note: 'All Seasons Adventures' },
-  { item: 'Olympic Park (bobsled + zip)', total: 1500, note: 'Group rate estimate' },
-  { item: 'Dinner: High West Saloon', total: 800, note: 'Night 1' },
-  { item: 'Dinner: 350 Main', total: 1200, note: 'Night 2' },
-  { item: 'Dinner: Prime Steak House', total: 1800, note: 'Night 3' },
-  { item: 'Brunch: Riverhorse on Main', total: 600, note: 'Day 4' },
-  { item: 'Bar Budget (3 nights)', total: 2000, note: 'Estimated across all nights' },
-  { item: 'Airport Transfers', total: 400, note: 'Rideshare / rental split' },
-];
-
-const costTable = document.getElementById('costTable');
-let grandTotal = 0;
-costs.forEach(c => {
-  grandTotal += c.total;
-  const pp = Math.round(c.total / 10);
-  const row = document.createElement('div');
-  row.className = 'cost-row grid grid-cols-3 px-6 py-3 border-b border-summit-800/20 items-center';
-  row.innerHTML = `
-    <div>
-      <p class="text-bark-200 text-sm">${c.item}</p>
-      <p class="text-bark-500 text-xs">${c.note}</p>
-    </div>
-    <p class="text-right text-bark-200 text-sm">$${c.total.toLocaleString()}</p>
-    <p class="text-right text-bark-200 text-sm">$${pp.toLocaleString()}</p>
-  `;
-  costTable.appendChild(row);
-});
-document.getElementById('costTotal').textContent = `$${grandTotal.toLocaleString()}`;
-document.getElementById('costPerPerson').textContent = `~$${Math.round(grandTotal / 10).toLocaleString()}/person`;
 </script>
 </div><!-- /siteContent -->
 
