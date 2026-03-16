@@ -188,6 +188,44 @@ tailwind.config = {
     color: #2f1a13;
   }
 
+  .flight-input {
+    width: 100%;
+    background: rgba(83, 53, 39, 0.4);
+    border: 1px solid rgba(87, 78, 66, 0.5);
+    border-radius: 6px;
+    padding: 10px 14px;
+    color: #f0e6d6;
+    font-size: 14px;
+    transition: border-color 0.2s;
+  }
+  .flight-input:focus {
+    outline: none;
+    border-color: #d97706;
+  }
+  .flight-input::placeholder { color: #6a6050; }
+  select.flight-input { cursor: pointer; }
+  select.flight-input option { background: #2f1a13; color: #f0e6d6; }
+
+  .flight-card {
+    transition: transform 0.2s ease;
+  }
+  .flight-card:hover {
+    transform: translateY(-2px);
+  }
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  .spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(47, 26, 19, 0.3);
+    border-top-color: #2f1a13;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+  }
+
   ::-webkit-scrollbar { width: 8px; }
   ::-webkit-scrollbar-track { background: #231f1b; }
   ::-webkit-scrollbar-thumb { background: #574e42; border-radius: 4px; }
@@ -230,6 +268,7 @@ tailwind.config = {
       <a href="#crew" class="nav-link hover:text-ember-400">The Crew</a>
       <a href="#logistics" class="nav-link hover:text-ember-400">Logistics</a>
       <a href="#packing" class="nav-link hover:text-ember-400">Packing</a>
+      <a href="#flights" class="nav-link hover:text-ember-400">Flights</a>
     </div>
     <button id="mobileMenuBtn" class="md:hidden text-bark-200 hover:text-ember-400 transition-colors">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -241,6 +280,7 @@ tailwind.config = {
       <a href="#crew" class="mobile-nav hover:text-ember-400">The Crew</a>
       <a href="#logistics" class="mobile-nav hover:text-ember-400">Logistics</a>
       <a href="#packing" class="mobile-nav hover:text-ember-400">Packing</a>
+      <a href="#flights" class="mobile-nav hover:text-ember-400">Flights</a>
     </div>
   </div>
 </nav>
@@ -502,6 +542,97 @@ tailwind.config = {
 </section>
 
 
+<!-- FLIGHTS -->
+<section id="flights" class="py-24 md:py-32 px-6 bg-bark-950 relative">
+  <div class="max-w-5xl mx-auto">
+    <div data-reveal class="mb-16">
+      <p class="text-ember-400 text-sm tracking-[0.3em] uppercase mb-3">Coordinate Arrivals</p>
+      <h2 class="font-display text-5xl md:text-7xl text-bark-50 tracking-wide">FLIGHTS</h2>
+      <p class="text-bark-400 mt-3">Add your flight info so we can coordinate Ubers from SLC.</p>
+    </div>
+
+    <!-- FLIGHT FORM -->
+    <div data-reveal class="bg-bark-900/60 border border-summit-800/30 rounded-lg p-6 md:p-8 mb-8">
+      <h3 class="font-display text-2xl text-bark-50 tracking-wide mb-6">ADD YOUR FLIGHTS</h3>
+      <form id="flightForm" class="space-y-5">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-bark-400 text-xs tracking-wider uppercase mb-2">Your Name</label>
+            <select id="flightName" class="flight-input" required>
+              <option value="">Select your name</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-bark-400 text-xs tracking-wider uppercase mb-2">Airline</label>
+            <input type="text" id="flightAirline" class="flight-input" placeholder="e.g. Delta, United, Southwest" required />
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div>
+            <label class="block text-bark-400 text-xs tracking-wider uppercase mb-2">Flight Number</label>
+            <input type="text" id="flightNumber" class="flight-input" placeholder="e.g. DL 1234" />
+          </div>
+          <div>
+            <label class="block text-bark-400 text-xs tracking-wider uppercase mb-2">Arriving at SLC</label>
+            <input type="datetime-local" id="flightArrival" class="flight-input" />
+          </div>
+          <div>
+            <label class="block text-bark-400 text-xs tracking-wider uppercase mb-2">Departing SLC</label>
+            <input type="datetime-local" id="flightDeparture" class="flight-input" />
+          </div>
+        </div>
+        <div class="flex items-center gap-4">
+          <button type="submit" id="flightSubmitBtn" class="bg-ember-500 hover:bg-ember-600 text-bark-950 font-semibold px-8 py-3 rounded transition-colors text-sm tracking-wide uppercase">
+            Submit
+          </button>
+          <p id="flightSuccess" class="text-pine-400 text-sm hidden">Flight info submitted.</p>
+          <p id="flightError" class="text-red-400 text-sm hidden">Something went wrong. Try again.</p>
+        </div>
+      </form>
+    </div>
+
+    <!-- FLIGHT BOARD -->
+    <div data-reveal>
+      <h3 class="font-display text-2xl text-bark-50 tracking-wide mb-6">FLIGHT BOARD</h3>
+      <div id="flightBoard" class="space-y-3">
+        <div class="text-bark-500 text-sm py-8 text-center" id="flightBoardLoading">Loading flights...</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEXT STEPS -->
+<section id="nextsteps" class="py-24 md:py-32 px-6 bg-gradient-to-b from-bark-950 via-bark-900/80 to-bark-950 relative">
+  <div class="max-w-3xl mx-auto text-center">
+    <div data-reveal class="mb-12">
+      <p class="text-ember-400 text-sm tracking-[0.3em] uppercase mb-3">What to Do Now</p>
+      <h2 class="font-display text-5xl md:text-7xl text-bark-50 tracking-wide">NEXT STEPS</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div data-reveal class="bg-bark-900/60 border border-summit-800/30 rounded-lg p-8 text-left">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="flex-shrink-0 w-10 h-10 bg-ember-500/20 rounded-full flex items-center justify-center">
+            <span class="font-display text-xl text-ember-400">1</span>
+          </div>
+          <h3 class="font-display text-2xl text-bark-50 tracking-wide">CONFIRM YOU'RE IN</h3>
+        </div>
+        <p class="text-bark-300 text-sm leading-relaxed">Text Andrew and let him know you're coming. The sooner we have a headcount, the sooner we can lock everything down.</p>
+      </div>
+
+      <div data-reveal class="bg-bark-900/60 border border-summit-800/30 rounded-lg p-8 text-left">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="flex-shrink-0 w-10 h-10 bg-ember-500/20 rounded-full flex items-center justify-center">
+            <span class="font-display text-xl text-ember-400">2</span>
+          </div>
+          <h3 class="font-display text-2xl text-bark-50 tracking-wide">BOOK YOUR FLIGHTS</h3>
+        </div>
+        <p class="text-bark-300 text-sm leading-relaxed">Fly into SLC. Aim to arrive Thursday Aug 20 and depart Sunday Aug 23. Once booked, add your flight info above so we can coordinate rides from the airport.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer class="py-12 px-6 border-t border-summit-800/20">
   <div class="max-w-5xl mx-auto text-center">
@@ -713,6 +844,143 @@ Object.entries(packingData).forEach(([category, items]) => {
 });
 setTimeout(() => {
   document.querySelectorAll('#packingGrid [data-reveal]').forEach(el => observer.observe(el));
+}, 50);
+
+// ============================================================
+// FLIGHTS
+// Paste your Google Apps Script Web App URL below after setup.
+// See GOOGLE_SHEETS_SETUP.md for instructions.
+// ============================================================
+const SHEETS_API_URL = '';
+
+const flightNameSelect = document.getElementById('flightName');
+crew.forEach(m => {
+  const opt = document.createElement('option');
+  opt.value = m.name;
+  opt.textContent = m.name;
+  flightNameSelect.appendChild(opt);
+});
+
+function formatFlightDate(isoStr) {
+  if (!isoStr) return '';
+  const d = new Date(isoStr);
+  if (isNaN(d)) return isoStr;
+  const days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const hours = d.getHours();
+  const mins = String(d.getMinutes()).padStart(2, '0');
+  const ampm = hours >= 12 ? 'PM' : 'AM';
+  const h12 = hours % 12 || 12;
+  return `${days[d.getDay()]}, ${months[d.getMonth()]} ${d.getDate()} at ${h12}:${mins} ${ampm}`;
+}
+
+function renderFlightBoard(flights) {
+  const board = document.getElementById('flightBoard');
+  board.innerHTML = '';
+
+  if (!flights || flights.length === 0) {
+    board.innerHTML = '<div class="text-bark-500 text-sm py-8 text-center">No flights submitted yet. Be the first.</div>';
+    return;
+  }
+
+  flights.sort((a, b) => {
+    const da = a['Arrival'] ? new Date(a['Arrival']) : new Date('2099-01-01');
+    const db = b['Arrival'] ? new Date(b['Arrival']) : new Date('2099-01-01');
+    return da - db;
+  });
+
+  flights.forEach(f => {
+    const card = document.createElement('div');
+    card.className = 'flight-card bg-bark-900/60 border border-summit-800/30 rounded-lg p-5';
+    const arrivalHTML = f['Arrival'] ? `
+      <div>
+        <p class="text-bark-500 text-xs tracking-wider uppercase mb-1">Arriving SLC</p>
+        <p class="text-bark-100 text-sm">${formatFlightDate(f['Arrival'])}</p>
+      </div>` : '';
+    const departHTML = f['Departure'] ? `
+      <div>
+        <p class="text-bark-500 text-xs tracking-wider uppercase mb-1">Departing SLC</p>
+        <p class="text-bark-100 text-sm">${formatFlightDate(f['Departure'])}</p>
+      </div>` : '';
+    const flightNum = f['Flight Number'] ? `<span class="text-bark-400 text-sm ml-2">${f['Flight Number']}</span>` : '';
+
+    card.innerHTML = `
+      <div class="flex flex-col md:flex-row md:items-center gap-4">
+        <div class="flex-shrink-0 md:w-40">
+          <p class="font-display text-2xl text-bark-50 tracking-wide">${(f['Name'] || '').toUpperCase()}</p>
+          <p class="text-ember-400 text-sm">${f['Airline'] || ''}${flightNum}</p>
+        </div>
+        <div class="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-3">
+          ${arrivalHTML}
+          ${departHTML}
+        </div>
+      </div>
+    `;
+    board.appendChild(card);
+  });
+}
+
+async function loadFlights() {
+  if (!SHEETS_API_URL) {
+    document.getElementById('flightBoard').innerHTML = '<div class="text-bark-500 text-sm py-8 text-center">Flight tracking will be live once the Google Sheet is connected.</div>';
+    return;
+  }
+  try {
+    const res = await fetch(SHEETS_API_URL);
+    const data = await res.json();
+    renderFlightBoard(data);
+  } catch (err) {
+    document.getElementById('flightBoard').innerHTML = '<div class="text-bark-500 text-sm py-8 text-center">Could not load flights. Try refreshing.</div>';
+  }
+}
+
+loadFlights();
+
+document.getElementById('flightForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const btn = document.getElementById('flightSubmitBtn');
+  const successMsg = document.getElementById('flightSuccess');
+  const errorMsg = document.getElementById('flightError');
+  successMsg.classList.add('hidden');
+  errorMsg.classList.add('hidden');
+
+  if (!SHEETS_API_URL) {
+    errorMsg.textContent = 'Flight tracking is not connected yet. Check back soon.';
+    errorMsg.classList.remove('hidden');
+    return;
+  }
+
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span>';
+
+  const payload = {
+    name: document.getElementById('flightName').value,
+    airline: document.getElementById('flightAirline').value,
+    flightNumber: document.getElementById('flightNumber').value,
+    arrival: document.getElementById('flightArrival').value,
+    departure: document.getElementById('flightDeparture').value,
+  };
+
+  try {
+    await fetch(SHEETS_API_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify(payload),
+    });
+    successMsg.classList.remove('hidden');
+    document.getElementById('flightForm').reset();
+    setTimeout(() => loadFlights(), 2000);
+  } catch (err) {
+    errorMsg.classList.remove('hidden');
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = 'Submit';
+  }
+});
+
+setTimeout(() => {
+  document.querySelectorAll('#flights [data-reveal], #nextsteps [data-reveal]').forEach(el => observer.observe(el));
 }, 50);
 
 </script>
