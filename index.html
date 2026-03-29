@@ -722,15 +722,15 @@ document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
 // file, then set photo to e.g. "photos/name.jpg"
 // ============================================================
 const crew = [
-  { name: 'Andrew', role: 'groom', photo: 'Andrew Johnson.jpg', location: 'New York, NY', description: 'The man of the hour. Somehow convinced someone to put up with him for life.' },
-  { name: 'Peter', role: 'best-man', photo: 'Peter.jpg', location: 'Boise, ID', description: 'Best man and most likely to need a trip to Park City Medical Center. Rumor has it he has a frequent flyer card.' },
-  { name: 'Quinn', role: null, photo: 'Quinn 2.jpg', location: 'Los Angeles, CA', description: 'The loudest person at every table, every bar, and every chairlift. Also the only dad in the group, so expect unsolicited life advice by midnight.' },
-  { name: 'Jerry', role: null, photo: 'Jerry.jpg', location: 'Florida', description: 'Will find a way to bring up how great Florida is within five minutes of every conversation. Every. Single. One.' },
-  { name: 'Sean', role: null, photo: 'Sean.jpg', location: 'Chicago, IL', description: 'Statistically guaranteed to slip his number to at least one waitress per night. The over/under is 1.5.' },
-  { name: 'Rick', role: null, photo: 'Rick.jpg', location: 'New York, NY', description: 'Three drinks in and he will corner you for a passionate monologue about cats, insurance, or ideally both at the same time.' },
+  { name: 'Andrew', role: 'groom', photo: 'Andrew Johnson.jpg', location: 'New York, NY', description: 'The man of the weekend.' },
+  { name: 'Peter', role: 'best-man', photo: 'Peter.jpg', location: 'Boise, ID', description: 'Best man and most likely to need a trip to Park City Medical Center (maybe the third time will be free).' },
+  { name: 'Quinn', role: null, photo: 'Quinn 2.jpg', location: 'Los Angeles, CA', description: 'Expect to hear his voice echoing throughout the Park City valley. Also the only dad (to a human) in the group, so expect unsolicited parenting advice by midnight.' },
+  { name: 'Jerry', role: null, photo: 'Jerry.jpg', location: 'Florida', description: 'Will find a way to bring up how great Florida is within five minutes of every conversation, or convince you to sign up for an ultramarathon.' },
+  { name: 'Sean', role: null, photo: 'Sean.jpg', location: 'Chicago, IL', description: 'Statistically guaranteed to slip his number to at least one waitress over the weekend.' },
+  { name: 'Rick', role: null, photo: 'Rick.jpg', location: 'New York, NY', description: 'Three drinks in and he will corner you to show pictures of his cats, monologue about the insurance sector, or both at the same time (pet insurance?).' },
   { name: 'Matt', role: null, photo: 'Matt.jpg', location: 'New York, NY', description: 'Will absolutely blow his banking bonus on a pair of cowboy boots and a hat he will never wear again after Sunday.' },
-  { name: 'Cody', role: null, photo: 'Cody.jpg', location: 'Chicago, IL', description: 'Loves a good fun fact and spends his days building minor league sports stadiums across the heartland of the US.' },
-  { name: 'Matthew', role: null, photo: 'Matthew.png', location: 'New York, NY', description: 'History buff. Will find a way to connect everything in Park City back to the Western frontier, the mining boom, or the 2002 Olympics.' },
+  { name: 'Cody', role: null, photo: 'Cody.jpg', location: 'Chicago, IL', description: 'Loves a good fun fact and spends his days building minor league sports stadiums across the American heartland.' },
+  { name: 'Matthew', role: null, photo: 'Matthew.png', location: 'New York, NY', description: 'A history buff who will find a way to connect everything in Park City back to the Western frontier, the mining boom, or the Mormons.' },
 ];
 
 const crewGrid = document.getElementById('crewGrid');
@@ -776,39 +776,24 @@ const packingData = {
     'Hiking boots or trail shoes',
     'Moisture-wicking shirts (2-3)',
     'Light rain jacket / windbreaker',
-    'Sunglasses (polarized)',
-    'Baseball cap or sun hat',
+    'Sunglasses',
+    'Baseball cap or floppy hat (looking at you Quinn)',
     'Daypack / small backpack',
-    'Water bottle (reusable)',
+    'Swimsuit (for the hot tub)',
+    'Reusable water bottle',
   ],
   'Going Out': [
-    'Jeans or chinos (2 pairs)',
-    'Button-down or nice polo (2)',
-    'Casual sneakers / going-out shoes',
-    'Light jacket or flannel for evenings',
+    'Pants (jeans or chinos or khakis',
+    'One nicer shirt for presumably a nicer dinner',
+    'Casual sneakers',
+    'Light jacket for evenings',
   ],
-  'Essentials': [
-    'Sunscreen (SPF 50+)',
-    'Lip balm with SPF',
-    'Deodorant / toiletries',
-    'Advil / Tylenol',
-    'Phone charger / portable battery',
-    'ID and credit cards',
-    'Cash for tips',
-    'Health insurance card',
-  ],
-  'Altitude Prep': [
+  'Altitude / drinking prep': [
     'Electrolyte packets (Liquid IV, etc.)',
     'Extra water bottle',
     'Altitude sickness meds (Diamox, optional)',
-    'Melatonin for sleep adjustment',
-  ],
-  'Nice to Have': [
-    'GoPro or action camera',
-    'Swimsuit (hot tub)',
-    'Flip flops / slides',
-    'Playing cards / poker chips',
-    'Bluetooth speaker (portable)',
+    'Sunscreen',
+    'Lip balm',
   ],
 };
 
