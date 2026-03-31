@@ -852,13 +852,15 @@ function formatFlightDate(isoStr) {
   if (!isoStr) return '';
   const d = new Date(isoStr);
   if (isNaN(d)) return isoStr;
-  const days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  const hours = d.getHours();
-  const mins = String(d.getMinutes()).padStart(2, '0');
-  const ampm = hours >= 12 ? 'PM' : 'AM';
-  const h12 = hours % 12 || 12;
-  return `${days[d.getDay()]}, ${months[d.getMonth()]} ${d.getDate()} at ${h12}:${mins} ${ampm}`;
+  return d.toLocaleString('en-US', {
+    timeZone: 'America/Denver',
+    weekday: 'short',
+    month: 'short',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: '2-digit',
+    hour12: true
+  });
 }
 
 function renderFlightBoard(flights) {
@@ -940,12 +942,13 @@ document.getElementById('flightForm').addEventListener('submit', async (e) => {
   btn.disabled = true;
   btn.innerHTML = '<span class="spinner"></span>';
 
+  const toMDT = (val) => val ? val + ':00-06:00' : '';
   const payload = {
     name: document.getElementById('flightName').value,
     airline: document.getElementById('flightAirline').value,
     flightNumber: document.getElementById('flightNumber').value,
-    arrival: document.getElementById('flightArrival').value,
-    departure: document.getElementById('flightDeparture').value,
+    arrival: toMDT(document.getElementById('flightArrival').value),
+    departure: toMDT(document.getElementById('flightDeparture').value),
   };
 
   try {
@@ -983,14 +986,14 @@ function unlock() {
   document.getElementById('authGate').classList.add('hidden');
   document.getElementById('siteContent').classList.remove('hidden');
 }
-if (sessionStorage.getItem('pc-auth') === 'true') {
+if (localStorage.getItem('pc-auth') === 'true') {
   unlock();
 }
 document.getElementById('authForm').addEventListener('submit', async (e) => {
   e.preventDefault();
   const val = document.getElementById('authInput').value;
   if (await sha256(val) === HASH) {
-    sessionStorage.setItem('pc-auth', 'true');
+    localStorage.setItem('pc-auth', 'true');
     unlock();
   } else {
     document.getElementById('authError').classList.remove('hidden');
