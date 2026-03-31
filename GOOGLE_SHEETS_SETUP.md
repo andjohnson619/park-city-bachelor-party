@@ -31,7 +31,8 @@ function doGet(e) {
     for (var j = 0; j < headers.length; j++) {
       var val = data[i][j];
       if (val instanceof Date) {
-        row[headers[j]] = val.toISOString();
+        // Return times in Mountain Time so the site always displays the correct local time.
+        row[headers[j]] = Utilities.formatDate(val, 'America/Denver', "yyyy-MM-dd'T'HH:mm");
       } else {
         row[headers[j]] = val;
       }

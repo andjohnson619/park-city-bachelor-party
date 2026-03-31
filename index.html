@@ -848,19 +848,21 @@ crew.forEach(m => {
   flightNameSelect.appendChild(opt);
 });
 
-function formatFlightDate(isoStr) {
-  if (!isoStr) return '';
-  const d = new Date(isoStr);
-  if (isNaN(d)) return isoStr;
-  return d.toLocaleString('en-US', {
-    timeZone: 'America/Denver',
-    weekday: 'short',
-    month: 'short',
-    day: 'numeric',
-    hour: 'numeric',
-    minute: '2-digit',
-    hour12: true
-  });
+function formatFlightDate(str) {
+  if (!str) return '';
+  // Parse components directly from the string so no timezone math is applied.
+  // Apps Script returns times already in MT ("YYYY-MM-DDTHH:mm").
+  const m = str.match(/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/);
+  if (!m) return str;
+  const [, year, month, day, hour, min] = m;
+  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  // Use UTC constructor for day-of-week so local timezone has no effect.
+  const dow = new Date(Date.UTC(+year, +month - 1, +day)).getUTCDay();
+  const h = +hour;
+  const ampm = h >= 12 ? 'PM' : 'AM';
+  const h12 = h % 12 || 12;
+  return `${days[dow]}, ${months[+month - 1]} ${+day} at ${h12}:${min} ${ampm} MT`;
 }
 
 function renderFlightBoard(flights) {
@@ -942,13 +944,12 @@ document.getElementById('flightForm').addEventListener('submit', async (e) => {
   btn.disabled = true;
   btn.innerHTML = '<span class="spinner"></span>';
 
-  const toMDT = (val) => val ? val + ':00-06:00' : '';
   const payload = {
     name: document.getElementById('flightName').value,
     airline: document.getElementById('flightAirline').value,
     flightNumber: document.getElementById('flightNumber').value,
-    arrival: toMDT(document.getElementById('flightArrival').value),
-    departure: toMDT(document.getElementById('flightDeparture').value),
+    arrival: document.getElementById('flightArrival').value,
+    departure: document.getElementById('flightDeparture').value,
   };
 
   try {
